@@ -1,4 +1,4 @@
-FROM node:20-alpine as builder
+FROM node:20-alpine
 WORKDIR /app
 COPY . .
 RUN npm i
