@@ -1,3 +1,5 @@
+[![Frontend alive](https://github.com/vm4tech/refook.ru/actions/workflows/deploy.yaml/badge.svg)](https://github.com/vm4tech/refook.ru/actions/workflows/deploy.yaml)
+
 <div align="center">
   
 # Refook

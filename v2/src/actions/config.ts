@@ -53,5 +53,5 @@ export const CLIENT_ID = "login";
 export const SERVER_URL = `${URL}/api/v1`;
 export const CORE_URL = "/core";
 export const SERVER_CORE_URL = SERVER_URL + CORE_URL
-export const KEYCLOAK_LOGIN = "https://refook.ru/keycloak/login";
-export const KEYCLOAK_LOGOUT = "https://refook.ru/keycloak/logout";
+export const KEYCLOAK_LOGIN = "https://api.refook.ru/keycloak/login";
+export const KEYCLOAK_LOGOUT = "https://api.refook.ru/keycloak/logout";
