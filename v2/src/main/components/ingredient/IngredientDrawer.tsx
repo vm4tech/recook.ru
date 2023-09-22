@@ -75,6 +75,7 @@ const IngredientDrawer: React.FC<{
 
   return (
     <Drawer
+      key={ingredient?.id}
       title={
         ingredient ? `Редактирование ${ingredient.name}` : `Создание игредиента`
       }

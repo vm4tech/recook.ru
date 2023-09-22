@@ -18,7 +18,6 @@ export const useSender = (
     };
 };
 
-
 const send = async (sendFunction: SendFunctionType, body?: Object): Promise<ErrorType | null> => {
     try {
         await sendFunction(body);

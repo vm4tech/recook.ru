@@ -2,10 +2,10 @@ import { CommonStore } from "./CommonStore";
 import autoObservable from "./autoObservable";
 
 import axios from "axios";
-import { AXIOS, CORE_URL, SERVER_URL } from "../actions/config";
+import {AXIOS, CORE_URL, SERVER_CORE_URL, SERVER_URL} from "../actions/config";
 import { EatValue, LongId, MeasureType } from "../types/common/CommonTypes";
 
-export const INGREDIENT_URL = SERVER_URL + CORE_URL + "/ingredient";
+export const INGREDIENT_URL = SERVER_CORE_URL+ "/ingredient";
 
 export enum IngredientEnum {
   DAIRY = 1,
@@ -48,9 +48,7 @@ export class IngredientStore extends CommonStore implements Ingredient {
   }
   createIngredient = async (ingredient: Ingredient) => {
     this.setLoading(true);
-    return await AXIOS.post(INGREDIENT_URL + "/create", {
-        ...ingredient,
-      })
+    return await AXIOS.post(INGREDIENT_URL + "/create", ingredient)
           .then((res) => {
             console.info("success:", res.data);
             this.setLoading(false);
@@ -65,9 +63,7 @@ export class IngredientStore extends CommonStore implements Ingredient {
 
   updateIngredient = async (ingredient: Ingredient) => {
     this.setLoading(true);
-    return await AXIOS.patch(INGREDIENT_URL + "/update", {
-      ...ingredient,
-    })
+    return await AXIOS.patch(INGREDIENT_URL + "/update", ingredient)
         .then((res) => {
           console.info("success:", res.data);
           this.setLoading(false);

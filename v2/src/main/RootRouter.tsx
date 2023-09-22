@@ -13,6 +13,8 @@ import SignupPage from "./components/routes/auth/SignupPage";
 import Live from "./Live";
 import IngredientRoute from "./components/routes/IngredientRoute";
 import ProfileRoute from "./components/routes/ProfileRoute";
+import DishRoute from "./components/routes/DishRoute";
+import Admin from "./Admin";
 
 // import Dev from "./Dev";
 // import App from "./App";
@@ -46,10 +48,11 @@ const RootRouter: React.FC = () => {
           <Route path="login" element={<LoginPage />} />
           <Route path="signup" element={<SignupPage />} />
           <Route path="ingredient" element={<IngredientRoute />} />
+          <Route path="dish" element={<DishRoute />} />
         </Route>
-        <Route path="admin" element={<Dev />}>
+        <Route path="admin" element={<Admin />}>
           <Route path="ingredient" element={<IngredientRoute />} />
-          <Route path="dish" element={<Dev />} />
+          <Route path="dish" element={<DishRoute />} />
         </Route>
         <Route path="*" element={<Navigate to={"/info"} replace />} />
       </Routes>

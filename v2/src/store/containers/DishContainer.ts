@@ -1,31 +1,33 @@
+import {Dish, DISH_URL} from "../DishStore";
 import {CommonStore} from "../CommonStore";
 import autoObservable from "../autoObservable";
-import {Ingredient, INGREDIENT_URL} from "../IngredientStore";
 import {AXIOS} from "../../actions/config";
 
-export class IngredientContainerStore extends CommonStore {
-    ingredients?: Ingredient[];
+
+export class DishContainer extends CommonStore{
+    dishes?: Dish[];
+
     constructor() {
         super();
         autoObservable(this);
     }
 
-    setIngredients = (data: Ingredient[]) => {
-        this.ingredients = data;
-    }
-
-    getAllIngredients = async () => {
+    getAllDishes = async () => {
         this.setLoading(true);
-        // await this.delay(3000);
-        await AXIOS.get(INGREDIENT_URL + "/")
+        return await AXIOS.get(DISH_URL + "/")
             .then((res) => {
-                this.setIngredients(res.data);
+                this.setDishes(res.data);
                 console.warn("res", res.data);
+                this.setLoading(false);
             })
             .catch((err) => {
                 this.setError(err);
+                this.setLoading(false);
                 throw err;
             });
-        this.setLoading(false);
+    }
+
+    setDishes = (dishes: Dish[]) => {
+        this.dishes = dishes;
     }
 }
