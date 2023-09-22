@@ -1,0 +1,13 @@
+name: Frontend runner
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  psql:
+    runs-on: self-hosted
+    steps:
+      - name: Update repository refook.ru
+        uses: actions/checkout@v3
+      - name: ReactAPP build up
+        run: docker compose up -d
