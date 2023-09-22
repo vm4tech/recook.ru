@@ -4,7 +4,10 @@ on:
     branches: ["main"]
 
 jobs:
-  psql:
+  react:
+    defaults:
+      run:
+        working-directory: v2
     runs-on: self-hosted
     steps:
       - name: Update repository refook.ru
