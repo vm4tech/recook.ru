@@ -14,10 +14,10 @@ import {
 import { selectMeasureType, selectTypeIngredient } from "../../utils/utils";
 import { Option } from "antd/es/mentions";
 import { useStore } from "../../../hooks/useStore";
-import { Ingredient } from "../../../../../../src/types/Ingredient";
 import { SetOpenType } from "../../../types/common/CommonTypes";
 import { observer } from "mobx-react-lite";
 import {useSender} from "../../../hooks/useSender";
+import {Ingredient} from "../../../store/IngredientStore";
 
 const { Title } = Typography;
 
@@ -51,14 +51,6 @@ const IngredientDrawer: React.FC<{
       await create(formIngredient)
           .then(() => ingredientContainer.getAllIngredients());
     }
-
-    // const isUpdate = await sender({
-    //   ...form.getFieldsValue(),
-    //   id: ingredient?.id,
-    // });
-    // if (isUpdate) {
-    //   setUpdate(Math.random());
-    // }
   };
 
   const selectMeasure = (

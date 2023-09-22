@@ -1,7 +1,7 @@
 import {notification} from "antd";
 import {SetOpenType} from "../../../types/common/CommonTypes";
 /**
- *
+ * Функция обработки ответа и вывода сообщения в уведомлятель
  * @param setOpen - функция drawer
  * @param error (ErrorType | null) - ошибка, хз как по другому сделать
  * @param message - custom message for output
@@ -34,7 +34,7 @@ export const notifyRequest = (error: any, message?: string) => {
     if (error === null) {
         setTimeout(() => {
             notification.success({
-                message: message ? message : "Вы успешно вошли в Refook",
+                message: message ? message : "Данные успешно загружены",
             });
         }, 1000);
     } else {

@@ -14,13 +14,8 @@ import {
 } from "antd";
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import {useNavigate} from "react-router-dom";
-
-// import { useActions } from "../../../../hooks/useActions";
-// import { useCRUDSender } from "../../../../hooks/useCRUDSender";
-// import { error } from "console";
-// import { ErrorType } from "../../../../types/common/ErrorType";
-// import { setErrorsFromResponse } from "../../../utils/utils";
-// import { useTypedSelector } from "../../../../hooks/useTypedSelector";
+import {useStore} from "../../../../hooks/useStore";
+import {useSender} from "../../../../hooks/useSender";
 const { Content } = Layout;
 const { Title, Link, Text } = Typography;
 
@@ -38,13 +33,9 @@ const validateMessages = {
 const SignupPage: React.FC = () => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
-  // const { loading } = useTypedSelector((state) => state.restReducer);
-  // const { signUp } = useActions();
-  // const sender = useCRUDSender(
-  //   signUp,
-  //   undefined,
-  //   "Вы успешно зарегистрировались в Refook!"
-  // );
+  const { userStore } = useStore();
+  // const {} = userStore;
+  // const sender = useSender(, undefined, "Вы успешно зарегистрировались в Refook!");
   useEffect(() => {}, []);
 
   // const onFinish = () => {

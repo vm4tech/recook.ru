@@ -43,13 +43,17 @@ const LoginPage: React.FC = () => {
   const login = useSender(userStore.loginAction)
 
   useEffect(() => {
-    if (isLoggined()) navigate("/");
+    if (isLoggined())
+        navigate("/");
   }, []);
 
   const onFinish = () => {
     console.log("Success: ", form.getFieldsValue());
     const values: SignType = form.getFieldsValue();
-    login(values).then(() => navigate(0));
+    login(values)
+        .then(() =>
+          navigate(0)
+        ).catch();
   };
 
   const onFinishFailed = () => {

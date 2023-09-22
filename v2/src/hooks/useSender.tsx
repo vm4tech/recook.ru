@@ -8,18 +8,18 @@ export const useSender = (
     notifyMessage?: string
 ): SenderType => {
     const { notifyAndCloseDrawer, notifyRequest } = useRefookNotification();
-    return async (body: Object) => {
+    return async (body?: Object) => {
         const res = await send(sendFunction, body);
         if (setOpen !== undefined) {
-            return notifyAndCloseDrawer(setOpen, res, notifyMessage);
+            notifyAndCloseDrawer(setOpen, res, notifyMessage);
         } else {
-            return notifyRequest(res, notifyMessage);
+            notifyRequest(res, notifyMessage);
         }
     };
 };
 
 
-const send = async (sendFunction: SendFunctionType, body: Object): Promise<ErrorType | null> => {
+const send = async (sendFunction: SendFunctionType, body?: Object): Promise<ErrorType | null> => {
     try {
         await sendFunction(body);
         return null;
@@ -31,4 +31,4 @@ const send = async (sendFunction: SendFunctionType, body: Object): Promise<Error
 /**
  * throw error, if error != null
  */
-export type SenderType = (body: Object) => Promise<void>;
+export type SenderType = (body?: Object) => Promise<any>;

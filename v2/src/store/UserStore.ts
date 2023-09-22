@@ -33,24 +33,25 @@ export class UserStore extends CommonStore {
         setCookie("isLoggined", true);
         setCookie("expires_in", res.data.expires_in);
         setCookie("refresh_expires_in", res.data.refresh_expires_in);
+        this.setLoading(false);
       })
       .catch((err) => {
         this.setError(err);
         this.setLoading(false);
         throw err;
       });
-
   };
 
   logout = async () => {
     this.setLoading(true);
     return await AXIOS_AUTH.post(
         KEYCLOAK_LOGOUT, new URLSearchParams(this.getLogoutObject())
-    ).then(res => {
-      dropCookies().then(() => {
+    ).then(async res => {
+      await dropCookies().then(() => {
         this.setLoading(false);
       })
-    }).catch(err => {
+    })
+    .catch(err => {
       this.setError(err);
       this.setLoading(false)
       throw err;

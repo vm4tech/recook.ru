@@ -12,12 +12,16 @@ const AuthButtons: React.FC = () => {
   const {isLoading, logout} = userStore;
   const logoutSender = useSender(logout, undefined, "Вы успешно вышли из Refook!")
 
+  const logoutClick = () => {
+    logoutSender().then(() => navigate(0))
+  }
+
   return (
     <Space align={"center"}>
       {isLoggined() ? (
         <Button
           loading={isLoading}
-          onClick={logoutSender}
+          onClick={logoutClick}
           size={"large"}
         >
           Logout

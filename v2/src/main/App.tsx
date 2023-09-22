@@ -11,8 +11,8 @@ import AuthButtons from "./components/auth/AuthButtons";
 const { Title } = Typography;
 
 const headerItems: MenuProps["items"] = [
-  getItem("Ингредиенты", "ingredient"),
-  getItem("Блюда", "dish"),
+  isLoggined() ? getItem("Ингредиенты", "ingredient") : null,
+  isLoggined() ? getItem("Блюда", "dish") : null,
   isLoggined() ? getItem("История", "history") : null,
   isLoggined() ? getItem("Профиль", "profile") : null,
 ];

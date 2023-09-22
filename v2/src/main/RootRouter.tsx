@@ -12,6 +12,7 @@ import LoginPage from "./components/routes/auth/LoginPage";
 import SignupPage from "./components/routes/auth/SignupPage";
 import Live from "./Live";
 import IngredientRoute from "./components/routes/IngredientRoute";
+import ProfileRoute from "./components/routes/ProfileRoute";
 
 // import Dev from "./Dev";
 // import App from "./App";
@@ -40,7 +41,7 @@ const RootRouter: React.FC = () => {
         <Route path="/" element={<App />}>
           <Route path="info" element={<Dev />} />
           <Route path="live" element={<Live />} />
-          <Route path="profile" element={<Dev />} />
+          <Route path="profile" element={<ProfileRoute />} />
           <Route path="dev" element={<Dev />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="signup" element={<SignupPage />} />
