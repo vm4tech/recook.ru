@@ -1,6 +1,7 @@
 {
   "name": "refook",
   "version": "0.1.0",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@ant-design/colors": "^7.0.0",
@@ -31,7 +32,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prod": "serve -s build"
   },
   "eslintConfig": {
     "extends": [
