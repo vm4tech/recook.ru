@@ -48,7 +48,7 @@ const getRefreshObj = ()  => {
 export const EMPTY_AXIOS: AxiosRequestConfig = {};
 export const AXIOS_AUTH = axios.create(EMPTY_AXIOS);
 
-const URL = "https://refook.ru";
+const URL = "https://api.refook.ru";
 export const CLIENT_ID = "login";
 export const SERVER_URL = `${URL}/api/v1`;
 export const CORE_URL = "/core";
