@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  font-family: "Akshar", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#components-layout-demo-responsive .logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.site-layout-sub-header-background {
+  background: #fff;
+}
+
+.site-layout-background {
+  background: #fff;
+  height: 100%;
+}
+.logo {
+  float: left;
+  width: 100px;
+  height: 118px;
+  scale: unset;
+  background-repeat: space;
+  background-size: 95px;
+  margin: 11px 0 0 0;
+  background-repeat: no-repeat;
+  background-image: url("./logo.png");
+}
+
+.ant-row-rtl #components-layout-demo-top-side .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+
+.ant-collapse-header {
+  margin-left: 45%;
+}
+.ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-extra {
+  margin-left: 0;
+}
+.text_formating {
+  white-space: pre-wrap;
+}
