@@ -14,3 +14,5 @@ jobs:
         uses: actions/checkout@v3
       - name: ReactAPP build up
         run: docker compose up -d
+      - name: copy build directory
+        run: docker cp front:/app/build/ /var/www/refook.ru/html
