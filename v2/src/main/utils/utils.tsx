@@ -69,3 +69,10 @@ export const selectMeasure = (object: any, loading: boolean) => (
 //   );
 //   return newErrors;
 // };
+export function chunk<T> (data: T[] = [], size: number = 3){
+  let res: T[][] = [];
+  for (let i = 0; i < data.length; i += size) {
+    res.push(data.slice(i, i + size));
+  }
+  return res;
+}

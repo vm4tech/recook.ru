@@ -1,5 +1,4 @@
 import axios, { AxiosRequestConfig } from "axios";
-import {getAuthorization, getToken} from "../main/utils/CookieUtils";
 import {getCookie, setCookie} from "typescript-cookie";
 export const CONFIG_AXIOS: AxiosRequestConfig = {
   headers: {

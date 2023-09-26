@@ -4,6 +4,7 @@ import IngredientDrawer from "./IngredientDrawer";
 import { observer } from "mobx-react-lite";
 import {Ingredient} from "../../../store/IngredientStore";
 import {ruIngredientEnum, ruMeasureEnum} from "../../utils/languageEnum";
+import {getImage} from "../../utils/randomer/RandomImages";
 
 const { Text, Link, Title } = Typography;
 const gridStyle: React.CSSProperties = {
@@ -39,7 +40,7 @@ const IngredientCard: React.FC<{
         cover={
           <img
             alt="example"
-            src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+            src={getImage()}
             style={{ height: "10vh", objectFit: "cover" }}
           />
         }

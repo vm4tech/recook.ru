@@ -5,13 +5,13 @@ import Layout, { Footer, Header } from "antd/lib/layout/layout";
 import { observer } from "mobx-react-lite";
 import { getItem } from "./utils/utils";
 import { WhiteColor } from "./utils/colors";
-import { isLoggined } from "./utils/CookieUtils";
+import {isAdmin, isLoggined} from "./utils/CookieUtils";
 import AuthButtons from "./components/auth/AuthButtons";
 
 const { Title } = Typography;
 
 const headerItems: MenuProps["items"] = [
-  isLoggined() ? getItem("Ингредиенты", "ingredient") : null,
+  isAdmin() ? getItem("Ингредиенты", "ingredient") : null,
   isLoggined() ? getItem("Блюда", "dish") : null,
   isLoggined() ? getItem("История", "history") : null,
   isLoggined() ? getItem("Профиль", "profile") : null,
