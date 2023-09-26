@@ -13,4 +13,4 @@ jobs:
       - name: Update repository refook.ru
         uses: actions/checkout@v3
       - name: ReactAPP build up
-        run: docker compose up --build -d
+        run: docker compose up --progress plain --build -d
