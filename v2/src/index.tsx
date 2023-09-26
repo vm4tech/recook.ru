@@ -7,6 +7,7 @@ import App from "./main/App";
 import RootRouter from "./main/RootRouter";
 import { RootStoreContext } from "./hooks/useStore";
 import { RootStore } from "./store/RootStore";
+import { ConfigProvider } from "antd";
 // import { StoresProvider, stores } from "./stores";
 
 const root = ReactDOM.createRoot(
@@ -14,7 +15,16 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <RootStoreContext.Provider value={new RootStore()}>
-    <RootRouter />
-  </RootStoreContext.Provider>,
+  <ConfigProvider
+    theme={{
+      token: {
+        fontFamily: "Comfortaa",
+      },
+    }}
+  >
+    <RootStoreContext.Provider value={new RootStore()}>
+      <RootRouter />
+    </RootStoreContext.Provider>
+    ,
+  </ConfigProvider>,
 );

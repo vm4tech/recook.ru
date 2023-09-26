@@ -19,11 +19,11 @@ export class DishStore extends CommonStore implements Dish{
     amount: number = 0;
     calories: number= 0;
     carbohydrate: number = 0;
-    description: string = "";
+    description: string = "description_";
     fat: number = 0;
     measureType: MeasureType = MeasureType.GRAM;
-    name: string = "";
-    nickname: string = "";
+    name: string = "default";
+    nickname: string = "nickname_";
     proteins: number = 0;
     sugar: number = 0;
 

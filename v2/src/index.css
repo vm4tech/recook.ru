@@ -1,6 +1,9 @@
-body {
+* {
+  font-family: Comfortaa, sans-serif;
+}
+
+body,html,footer {
   margin: 0;
-  font-family: "Akshar", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

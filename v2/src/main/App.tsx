@@ -5,7 +5,7 @@ import Layout, { Footer, Header } from "antd/lib/layout/layout";
 import { observer } from "mobx-react-lite";
 import { getItem } from "./utils/utils";
 import { WhiteColor } from "./utils/colors";
-import {isAdmin, isLoggined} from "./utils/CookieUtils";
+import { isAdmin, isLoggined } from "./utils/CookieUtils";
 import AuthButtons from "./components/auth/AuthButtons";
 
 const { Title } = Typography;
@@ -59,7 +59,6 @@ const App: React.FC = () => {
       </Header>
 
       <Outlet />
-
       <Footer style={{ textAlign: "center", backgroundColor: "white" }}>
         Created by <b>Refook</b>
       </Footer>

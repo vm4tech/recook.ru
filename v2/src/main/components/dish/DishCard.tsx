@@ -16,12 +16,13 @@ const gridStyle: React.CSSProperties = {
 
 const DishCard: React.FC<{ dish: Dish }> = ({ dish }) => {
   const navigate = useNavigate();
-  const location = useLocation();
-
+  const navigateTo = () => {
+    navigate(`/dishes/${dish.id}`)
+  }
   return (
     <>
       <Card
-        // onClick={() => navigateTo(dish.id!)}
+        onClick={navigateTo}
         id={dish ? dish.id?.toString() : "key"}
         cover={
           <img
