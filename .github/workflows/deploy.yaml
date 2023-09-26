@@ -1,3 +1,4 @@
+# dmesg -T | grep -i 'killed process'
 name: Frontend runner
 on:
   push:
