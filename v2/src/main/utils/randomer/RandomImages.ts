@@ -1,5 +1,4 @@
 const dishes = [
-  'https://www.sonomamag.com/wp-content/uploads/2023/04/veggie_burger-2.png',
   'https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2023/02/Creamy-Cajun-Chicken-6.jpg',
   "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2023/02/Mediterranean-Cod-en-Papillote-6.jpg",
   "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2021/05/Chicken-Stir-Fry-9.jpg",

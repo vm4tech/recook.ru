@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
+  Navigate, Outlet,
 } from "react-router-dom";
 import Dev from "./Dev";
 import App from "./App";
@@ -15,6 +15,7 @@ import IngredientRoute from "./components/routes/IngredientRoute";
 import ProfileRoute from "./components/routes/ProfileRoute";
 import DishRoute from "./components/routes/DishRoute";
 import Admin from "./Admin";
+import DishPage from "./components/dish/DishPage";
 
 // import Dev from "./Dev";
 // import App from "./App";
@@ -48,7 +49,11 @@ const RootRouter: React.FC = () => {
           <Route path="login" element={<LoginPage />} />
           <Route path="signup" element={<SignupPage />} />
           <Route path="ingredient" element={<IngredientRoute />} />
-          <Route path="dish" element={<DishRoute />} />
+          <Route path="dishes" element={<Outlet/>}>
+            <Route path="all" element={<DishRoute />}/>
+            <Route path=":id" element={<DishPage />}/>
+          </Route>
+
         </Route>
         <Route path="admin" element={<Admin />}>
           <Route path="ingredient" element={<IngredientRoute />} />

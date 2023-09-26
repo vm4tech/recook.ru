@@ -38,7 +38,6 @@ const DishRoute: React.FC = () => {
         <Content style={{ padding: "10px" }}>
           <Row justify={"center"}>
             <Title>Блюда</Title>
-            <NewDish />
           </Row>
           <Space
             direction="vertical"
@@ -55,6 +54,7 @@ const DishRoute: React.FC = () => {
               </Row>
             )}
           </Space>
+          <NewDish />
         </Content>
       </Layout> : null
   );

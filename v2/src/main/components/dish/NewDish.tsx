@@ -1,4 +1,4 @@
-import { Button } from "antd";
+import {Button, FloatButton} from "antd";
 import { useState } from "react";
 import { PlusCircleOutlined } from "@ant-design/icons";
 import DishDrawer from "./DishDrawer";
@@ -11,11 +11,13 @@ const NewDish: ReactFC = () => {
   };
   return (
     <>
-      <Button
-        type="dashed"
-        block
+      <FloatButton
+        shape="circle"
+        tooltip={"Create new dish"}
+        type="primary"
+        style={{ right: 94, bottom: 94, scale: "1.5" }}
         icon={<PlusCircleOutlined />}
-        onClick={() => showDrawer()}
+        onClick={showDrawer}
       />
       <DishDrawer open={open} setOpen={setOpen} />
     </>

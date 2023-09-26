@@ -5,48 +5,45 @@ import DishDrawer from "./DishDrawer";
 import {Dish} from "../../../store/DishStore";
 import {observer} from "mobx-react-lite";
 import {getImage} from "../../utils/randomer/RandomImages";
+import {useLocation, useNavigate} from "react-router-dom";
 
 const { Text, Link, Title } = Typography;
+const { Meta } = Card;
 const gridStyle: React.CSSProperties = {
   width: "100%",
   textAlign: "center",
 };
 
 const DishCard: React.FC<{ dish: Dish }> = ({ dish }) => {
-  const [open, setOpen] = useState(false);
-  const showDrawer = () => {
-    setOpen(true);
-  };
+  const navigate = useNavigate();
+  const location = useLocation();
+
   return (
     <>
       <Card
-        onClick={showDrawer}
+        // onClick={() => navigateTo(dish.id!)}
         id={dish ? dish.id?.toString() : "key"}
         cover={
           <img
             alt="example"
             src={getImage()}
-            style={{ height: "10vh", objectFit: "cover" }}
+            style={{ height: "20vh", objectFit: "cover" }}
           />
         }
         bordered={false}
         hoverable
       >
-        <Card.Grid style={gridStyle}>
-          <Space direction="vertical">
-            <Title style={{ margin: 0 }} level={2}>
-              {dish.name}
-            </Title>
-          </Space>
-        </Card.Grid>
+        <Title style={{ textAlign:"center" }} level={4}>
+          {dish.name}
+        </Title>
       </Card>
 
-      <DishDrawer
-        dish={dish}
-        key={dish?.id?.toString()}
-        setOpen={setOpen}
-        open={open}
-      />
+      {/*<DishDrawer*/}
+      {/*  dish={dish}*/}
+      {/*  key={dish?.id?.toString()}*/}
+      {/*  // setOpen={setOpen}*/}
+      {/*  // open={open}*/}
+      {/*/>*/}
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import {Col, Layout, Row, Space} from "antd";
+import {Col, FloatButton, Layout, Row, Space} from "antd";
 import Title from "antd/es/typography/Title";
 import { useEffect, useState, createContext } from "react";
 import NewIngredient from "../ingredient/NewIngredient";
@@ -32,7 +32,6 @@ const IngredientRoute: React.FC = () => {
       <Content style={{ padding: "10px" }}>
         <Row justify={"center"}>
           <Title>Ингредиенты</Title>
-          <NewIngredient />
         </Row>
         <Space
           direction="vertical"
@@ -49,6 +48,7 @@ const IngredientRoute: React.FC = () => {
             </Row>
           )}
         </Space>
+        <NewIngredient/>
       </Content>
     </Layout>
   );
