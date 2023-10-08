@@ -7,6 +7,9 @@ import { getItem } from "./utils/utils";
 import { WhiteColor } from "./utils/colors";
 import { isAdmin, isLoggined } from "./utils/CookieUtils";
 import AuthButtons from "./components/auth/AuthButtons";
+import Navbar from "./components/navbar/Navbar";
+
+import "../styles/main.css"
 
 const { Title } = Typography;
 
@@ -23,16 +26,11 @@ const App: React.FC = () => {
     navigate(`/${e.key}`);
   };
   return (
-    <Layout>
-      <Header style={WhiteColor} className="header">
+    <>
+      <Navbar />
+      <Layout>
+      {/* <Header style={WhiteColor} className="header">
         <Row justify={"center"}>
-          {/* <Col>
-            <div
-              className="logo"
-              style={{ cursor: "pointer" }}
-              onClick={() => navigate("/")}
-            />
-          </Col> */}
 
           <Col flex={1}>
             <strong
@@ -41,7 +39,6 @@ const App: React.FC = () => {
             >
               Refook
             </strong>
-            {/* </Typography.Text> */}
           </Col>
           <Col flex={"auto"}>
             <Menu
@@ -56,13 +53,15 @@ const App: React.FC = () => {
 
           <AuthButtons />
         </Row>
-      </Header>
+      </Header> */}
 
       <Outlet />
       <Footer style={{ textAlign: "center", backgroundColor: "white" }}>
         Created by <b>Refook</b>
       </Footer>
     </Layout>
+    </>
+    
   );
 };
 
