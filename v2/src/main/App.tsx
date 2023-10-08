@@ -11,10 +11,10 @@ import AuthButtons from "./components/auth/AuthButtons";
 const { Title } = Typography;
 
 const headerItems: MenuProps["items"] = [
-  isAdmin() ? getItem("Ингредиенты", "ingredient") : null,
-  isLoggined() ? getItem("Блюда", "dishes/all") : null,
-  isLoggined() ? getItem("История", "history") : null,
-  isLoggined() ? getItem("Профиль", "profile") : null,
+  getItem("Ингредиенты", "ingredient"),
+  getItem("Блюда", "dishes/all"),
+  getItem("История", "history"),
+  getItem("Профиль", "profile"),
 ];
 
 const App: React.FC = () => {
