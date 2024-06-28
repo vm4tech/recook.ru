@@ -10,7 +10,7 @@ const AuthButtons: React.FC = () => {
   const navigate = useNavigate();
   const {userStore} = useStore()
   const {isLoading, logout} = userStore;
-  const logoutSender = useSender(logout, undefined, "Вы успешно вышли из Refook!")
+  const logoutSender = useSender(logout, undefined, "Вы успешно вышли из Recook!")
 
   const logoutClick = () => {
     logoutSender().then(() => navigate(0))

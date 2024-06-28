@@ -1,5 +1,5 @@
 import notification from "../main/utils/notification";
 
-export const useRefookNotification = () => {
+export const useRecookNotification = () => {
     return notification;
 };

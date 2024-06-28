@@ -42,7 +42,7 @@ const SignupPage: React.FC = () => {
   const sender = useCRUDSender(
     signUp,
     undefined,
-    "Вы успешно зарегистрировались в Refook!"
+    "Вы успешно зарегистрировались в Recook!"
   );
   useEffect(() => {}, []);
 

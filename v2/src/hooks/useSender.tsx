@@ -1,4 +1,4 @@
-import {useRefookNotification} from "./useRefookNotifications";
+import {useRecookNotification} from "./useRecookNotifications";
 import {SendFunctionType, SetOpenType} from "../types/common/CommonTypes";
 import {ErrorType} from "../types/common/ErrorType";
 
@@ -7,7 +7,7 @@ export const useSender = (
     setOpen?: SetOpenType,
     notifyMessage?: string
 ): SenderType => {
-    const { notifyAndCloseDrawer, notifyRequest } = useRefookNotification();
+    const { notifyAndCloseDrawer, notifyRequest } = useRecookNotification();
     return async (body?: Object) => {
         const res = await send(sendFunction, body);
         if (setOpen !== undefined) {

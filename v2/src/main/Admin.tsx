@@ -39,7 +39,7 @@ const Admin: React.FC = () => {
               onClick={() => navigate("/")}
               style={{ cursor: "pointer", fontSize: "190%" }}
             >
-              Refook
+              Recook
             </strong>
             {/* </Typography.Text> */}
           </Col>
@@ -60,7 +60,7 @@ const Admin: React.FC = () => {
       <Outlet />
 
       <Footer style={{ textAlign: "center", backgroundColor: "white" }}>
-        Created by <b>Refook</b>
+        Created by <b>Recook</b>
       </Footer>
     </Layout>
   );

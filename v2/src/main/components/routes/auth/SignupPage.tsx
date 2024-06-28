@@ -35,7 +35,7 @@ const SignupPage: React.FC = () => {
   const navigate = useNavigate();
   const { userStore } = useStore();
   // const {} = userStore;
-  // const sender = useSender(, undefined, "Вы успешно зарегистрировались в Refook!");
+  // const sender = useSender(, undefined, "Вы успешно зарегистрировались в Recook!");
   useEffect(() => {}, []);
 
   // const onFinish = () => {

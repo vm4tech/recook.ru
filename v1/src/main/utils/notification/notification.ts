@@ -36,7 +36,7 @@ export const notifyRequest = (error: any, message?: string) => {
   if (error === null) {
     setTimeout(() => {
       notification.success({
-        message: message ? message : "Вы успешно вошли в Refook",
+        message: message ? message : "Вы успешно вошли в Recook",
       });
     }, 1000);
   } else {

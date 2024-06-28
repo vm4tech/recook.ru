@@ -11,7 +11,7 @@ jobs:
         working-directory: v2
     runs-on: self-hosted
     steps:
-      - name: Update repository refook.ru
+      - name: Update repository recook.ru
         uses: actions/checkout@v3
       - name: ReactAPP build up
         run: docker compose --progress plain up --build -d

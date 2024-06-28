@@ -1,12 +1,12 @@
 import { SendFunctionType, SetOpenType } from "../types/common/CommonTypes";
-import { useRefookNotification } from "./useRefookNotification";
+import { useRecookNotification } from "./useRecookNotification";
 
 export const useCRUDSender = (
   sendFunction: SendFunctionType,
   setOpen?: SetOpenType,
   notifyMessage?: string
 ): SenderType => {
-  const { notifyAndCloseDrawer, notifyRequest } = useRefookNotification();
+  const { notifyAndCloseDrawer, notifyRequest } = useRecookNotification();
   return async (body: Object) => {
     const res = await sendFunction(body);
     if (setOpen !== undefined) {
