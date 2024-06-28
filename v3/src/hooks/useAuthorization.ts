@@ -1,16 +1,17 @@
 import {useMutation, useQuery, useQueryClient} from "react-query";
-import {loginRequest, testRequest} from "../actions/request";
+import {loginRequest, logoutRequest, testRequest} from "../actions/request";
 import {DEFAULT_QUERY_OPTIONS} from "../reactQuery/queryOptions";
 import {useCallback} from "react";
 import {setCookie} from "typescript-cookie";
+import {dropCookies} from "../main/utils/CookieUtils";
 
 export const useAuthorization = () =>
     useQuery('test', testRequest, DEFAULT_QUERY_OPTIONS);
 
-export const useLogin = (username: string, password: string) => {
+export const useLogin = () => {
     const queryClient = useQueryClient()
     return useMutation({
-        mutationFn: () => loginRequest(username, password),
+        mutationFn: loginRequest,
         onSuccess: useCallback(
             (res: any) => {
                 queryClient.removeQueries("keycloak_login")
@@ -24,6 +25,18 @@ export const useLogin = (username: string, password: string) => {
             [queryClient]
         ),
         onError: (err) => {console.warn(err)}
-    }
-    )
+    })
+}
+
+export const useLogout = () => {
+    return useMutation({
+        mutationFn: logoutRequest,
+        onSuccess: useCallback(
+            () => {
+                dropCookies()
+            },
+            []
+        ),
+        onError: (err) => {console.warn(err)}
+    })
 }

@@ -21,7 +21,7 @@ AXIOS.interceptors.response.use((response) => {
   return response
 }, async function (error) {
   const originalRequest = error.config;
-  if ((error.response.status === 403 || error.response.status === 401 )&& !originalRequest._retry) {
+  if ((error.response.status === 403 || error.response.status === 401 ) && !originalRequest._retry) {
     originalRequest._retry = true;
     await AXIOS_AUTH.post(
       KEYCLOAK_LOGIN,
@@ -50,9 +50,10 @@ export const EMPTY_AXIOS: AxiosRequestConfig = {};
 export const AXIOS_AUTH = axios.create(EMPTY_AXIOS);
 
 const URL = "https://api.recook.ru";
-export const CLIENT_ID = "login";
+export const CLIENT_ID = "recook-client";
 export const SERVER_URL = `${URL}/api/v1`;
 export const CORE_URL = "/core";
 export const SERVER_CORE_URL = SERVER_URL + CORE_URL
 export const KEYCLOAK_LOGIN = "http://localhost:8081/realms/recook/protocol/openid-connect/token";
+export const KEYCLOAK_LOGOUT = "http://localhost:8081/realms/recook/protocol/openid-connect/logout";
 // export const KEYCLOAK_LOGOUT = "https://api.recook.ru/keycloak/logout";

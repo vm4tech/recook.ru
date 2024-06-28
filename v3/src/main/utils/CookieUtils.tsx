@@ -16,11 +16,11 @@ export const getAuthorization = () => {
   console.log("getToken:", getToken());
   return getToken() !== undefined ? `Bearer ${getToken()}` : "";
 }
-export const dropCookies = async () => {
-  await removeCookie("access_token");
-  await removeCookie("refresh_token");
-  await removeCookie("isLoggined");
-  await removeCookie("expires_in");
-  await removeCookie("refresh_expires_in");
+export const dropCookies = () => {
+  removeCookie("access_token");
+  removeCookie("refresh_token");
+  removeCookie("isLoggined");
+  removeCookie("expires_in");
+  removeCookie("refresh_expires_in");
 };
 

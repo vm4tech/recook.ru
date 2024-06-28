@@ -1,26 +1,25 @@
 import React, {useEffect} from "react";
 import { Button, Space } from "antd";
 import { useNavigate } from "react-router-dom";
-import {useAuthorization} from "../../../hooks/useAuthorization";
+import {useAuthorization, useLogin, useLogout} from "../../../hooks/useAuthorization";
+import {isLoggined} from "../../utils/CookieUtils";
 
 export const AuthButtons: React.FC = () => {
   const navigate = useNavigate();
 
-  const data = useAuthorization()
-  console.log(data)
-  // useEffect(() => {})
+  const { mutateAsync, isLoading } = useLogout()
+
   return (
     <Space align={"center"}>
-      {/*{isLoggined() ? (*/}
-      {/*  <Button*/}
-      {/*    loading={isLoading}*/}
-      {/*    onClick={logoutClick}*/}
-      {/*    size={"large"}*/}
-      {/*  >*/}
-      {/*    Logout*/}
-      {/*  </Button>*/}
-      {/*) : (*/}
-      {/*{isLoading ? "asdasd" : "lol"}*/}
+      {isLoggined() ? (
+        <Button
+          loading={isLoading}
+          onClick={() => mutateAsync()}
+          size={"large"}
+        >
+          Logout
+        </Button>
+      ) : (
         <>
           <Button
             type="primary"
@@ -33,7 +32,7 @@ export const AuthButtons: React.FC = () => {
             Sign up
           </Button>
         </>
-      {/*)}*/}
+      )}
     </Space>
   );
 };

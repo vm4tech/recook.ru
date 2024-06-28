@@ -11,6 +11,7 @@ import {
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {useLogin} from "../../../hooks/useAuthorization";
+import {isLoggined} from "../../utils/CookieUtils";
 
 const { Content } = Layout;
 const { Title, Link, Text } = Typography;
@@ -29,13 +30,16 @@ const validateMessages = {
 export const LoginPage: React.FC = () => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
-  const { mutateAsync, data, isLoading } = useLogin(form.getFieldsValue().username, form.getFieldsValue().password)
-  console.warn(data)
+  const { mutateAsync, isLoading } = useLogin()
+
+  useEffect(() => {
+    if (isLoggined())
+      navigate("/")
+  }, [isLoggined()]);
 
   const onFinish = async () => {
     console.log("Success: ", form.getFieldsValue());
-    const res = mutateAsync(form.getFieldsValue().username, form.getFieldsValue().password)
-    console.warn(res)
+    await mutateAsync(form.getFieldsValue())
   };
 
   const onFinishFailed = () => {
