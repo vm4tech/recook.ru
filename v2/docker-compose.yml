@@ -1,9 +1,0 @@
-version: "3.9"
-
-services:
-  front:
-    container_name: front
-    image: front
-    build: .
-    ports:
-      - 3000:80
