@@ -10,29 +10,19 @@ export const AuthButtons: React.FC = () => {
   const { mutateAsync, isLoading } = useLogout()
 
   return (
-    <Space align={"center"}>
-      {isLoggined() ? (
-        <Button
-          loading={isLoading}
-          onClick={() => mutateAsync()}
-          size={"large"}
-        >
-          Logout
-        </Button>
-      ) : (
-        <>
-          <Button
-            type="primary"
-            onClick={() => navigate(`/login`)}
-            size={"large"}
-          >
-            Log in
-          </Button>
-          <Button onClick={() => navigate(`/signup`)} size={"large"}>
-            Sign up
-          </Button>
-        </>
-      )}
-    </Space>
-  );
+      !isLoggined() ?
+          <>
+            <Button
+                type="primary"
+                onClick={() => navigate(`/login`)}
+                size={"large"}
+            >
+              Log in
+            </Button>
+            <Button onClick={() => navigate(`/signup`)} size={"large"}>
+              Sign up
+            </Button>
+          </>
+       : <></>
+  )
 };

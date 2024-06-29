@@ -48,7 +48,13 @@ export const LoginPage: React.FC = () => {
 
   return (
     <Row align={"middle"} justify={"center"}>
-      <Col span={12}>
+      <Col
+          xs={{ flex: '0%' }}
+          sm={{ flex: '0%' }}
+          md={{ flex: '0%' }}
+          lg={{ flex: '50%' }}
+          xl={{ flex: '50%' }}
+      >
         <Image
           preview={false}
           style={{ opacity: "80%", height: "86vh", objectFit: "cover" }}
@@ -57,8 +63,8 @@ export const LoginPage: React.FC = () => {
           }
         />
       </Col>
-      <Col span={12}>
-        <Title style={{ textAlign: "center" }}> Вход</Title>
+      <Col flex={"50%"}>
+        <Title level={3} style={{ textAlign: "center" }}> Вход</Title>
         <Form
           form={form}
           name={formName}
@@ -100,15 +106,17 @@ export const LoginPage: React.FC = () => {
             </Link>
           </div>
           <br />
-          <Form.Item wrapperCol={{ offset: 11 }}>
-            <Button
-              loading={isLoading}
-              type="primary"
-              htmlType="submit"
-            >
-              Войти
-            </Button>
-          </Form.Item>
+          <Row align={"middle"} justify={"center"}>
+            <Form.Item >
+              <Button
+                loading={isLoading}
+                type="primary"
+                htmlType="submit"
+              >
+                Войти
+              </Button>
+            </Form.Item>
+          </Row>
         </Form>
       </Col>
     </Row>

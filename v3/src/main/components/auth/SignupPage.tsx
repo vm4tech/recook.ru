@@ -49,8 +49,8 @@ const SignupPage: React.FC = () => {
 
   return (
     <Row align={"middle"} justify={"center"}>
-      <Col span={12}>
-        <Title style={{ textAlign: "center" }}>Регистрация</Title>
+      <Col flex={"50%"}>
+        <Title level={3} style={{ textAlign: "center" }}>Регистрация</Title>
         <Form
           form={form}
           name={formName}
@@ -63,7 +63,7 @@ const SignupPage: React.FC = () => {
           autoComplete="off"
           validateMessages={validateMessages}
         >
-          <Form.Item label="Логин" name="username" rules={[{ required: true }]}>
+          <Form.Item label="Логин" name="username" rules={[{ required: true }]} >
             <Input />
           </Form.Item>
           <Form.Item
@@ -92,14 +92,22 @@ const SignupPage: React.FC = () => {
             </Link>
           </div>
           <br />
-          <Form.Item wrapperCol={{ offset: 9 }}>
-            <Button type="primary" htmlType="submit">
-              Зарегистрироваться
-            </Button>
-          </Form.Item>
+          <Row align={"middle"} justify={"center"}>
+            <Form.Item >
+              <Button type="primary" htmlType="submit">
+                Зарегистрироваться
+              </Button>
+            </Form.Item>
+          </Row>
         </Form>
       </Col>
-      <Col span={12}>
+      <Col
+         xs={{ flex: '0%' }}
+         sm={{ flex: '0%' }}
+         md={{ flex: '0%' }}
+         lg={{ flex: '50%' }}
+         xl={{ flex: '50%' }}
+      >
         <Image
           preview={false}
           style={{ opacity: "80%", height: "86vh", objectFit: "cover" }}
