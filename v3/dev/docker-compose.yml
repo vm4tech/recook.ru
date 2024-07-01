@@ -7,9 +7,9 @@ networks:
     name: config-net
 
 services:
-  nginx:
+  front-nginx:
     image: nginx:latest
-    container_name: dev-front-ngninx
+    container_name: dev-front-nginx
     environment:
       - ENV=development
     volumes:

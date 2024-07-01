@@ -1,10 +1,12 @@
 import React from "react";
 import {Avatar, Badge, message, Space, MenuProps, Dropdown, Button} from 'antd';
 import { UserOutlined } from '@ant-design/icons';
+import {useLogout} from "../../hooks/useAuthorization";
+import {useNavigate} from "react-router-dom";
 const Test: React.FC = () => (
     <Space size={24}>
         <Badge count={1}>
-            <Avatar icon={<UserOutlined />} />
+            <Avatar shape="square" icon={<UserOutlined />} />
         </Badge>
     </Space>
 );
@@ -18,24 +20,28 @@ const items: MenuProps['items'] = [
 
 ];
 
-const handleMenuClick: MenuProps['onClick'] = (e) => {
-    message.info('Click on menu item.');
-    console.log('click', e);
-};
-const menuProps = {
-    items,
-    onClick: handleMenuClick,
-};
 
 export const ProfileButton: React.FC = ()  => {
+    const { mutateAsync, isLoading} = useLogout()
+    const navigate = useNavigate()
+    const handleMenuClick: MenuProps['onClick'] = async (e) => {
+        message.info('Click on menu item.');
+        console.log('click', e);
+        await mutateAsync()
+        navigate(`/`);
+    };
+    const menuProps = {
+        items,
+        onClick: handleMenuClick,
+    };
+
     return (
-    <Dropdown menu={menuProps} >
-        <Button>
-            <Space>
-                Button
-                <Test />
-            </Space>
-        </Button>
-    </Dropdown>
+        <Dropdown.Button
+            icon={<Test />}
+            menu={menuProps}
+        >
+            Submit
+        </Dropdown.Button>
+
     )
 }

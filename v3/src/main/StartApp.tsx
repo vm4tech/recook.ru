@@ -56,8 +56,7 @@ export const StartApp: React.FC = () => {
 
           {/*</Col>*/}
         <Space align={"center"}>
-            <ProfileButton />
-          <AuthButtons />
+            {isLoggined() ? <ProfileButton /> : <AuthButtons /> }
         {/*</Row>*/}
         </Space>
       </Header>
