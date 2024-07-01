@@ -1,0 +1,21 @@
+version: '3.8'
+name: ${MS_NAME}
+
+networks:
+  config-net:
+    driver: bridge
+    name: config-net
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: dev-front-ngninx
+    environment:
+      - ENV=development
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - config-net
