@@ -25,10 +25,14 @@ export const ProfileButton: React.FC = ()  => {
     const { mutateAsync, isLoading} = useLogout()
     const navigate = useNavigate()
     const handleMenuClick: MenuProps['onClick'] = async (e) => {
-        message.info('Click on menu item.');
         console.log('click', e);
-        await mutateAsync()
-        navigate(`/`);
+        await mutateAsync(undefined, undefined).then(
+            () => {
+                message.success('Вы успешно вышли, перенаправление');
+                navigate(`/`);
+            }
+        )
+
     };
     const menuProps = {
         items,
