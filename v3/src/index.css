@@ -1,5 +1,7 @@
+@import url("./main/components/main/main.css");
 * {
-  font-family: Comfortaa, sans-serif;
+  font-family: DaysOne-Regular;
+  /*font-family: Montserrat;*/
 }
 
 body,html,footer {

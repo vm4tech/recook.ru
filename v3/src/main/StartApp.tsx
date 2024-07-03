@@ -12,6 +12,7 @@ import {ProfileButton} from "./components/profile";
 const { Title } = Typography;
 
 const headerItems: MenuProps["items"] = [
+    getItem("Главная", "main"),
   isAdmin() ? getItem("Ингредиенты", "ingredient") : null,
   isLoggined() ? getItem("Блюда", "dishes/all") : null,
   isLoggined() ? getItem("История", "history") : null,
@@ -26,24 +27,13 @@ export const StartApp: React.FC = () => {
   return (
     <Layout>
       <Header style={{ display: 'flex', alignItems: 'center', ...WhiteColor }} className="header">
-        {/*<Row justify={"center"}>*/}
-          {/* <Col>
-            <div
-              className="logo"
-              style={{ cursor: "pointer" }}
+            <text
               onClick={() => navigate("/")}
-            />
-          </Col> */}
-
-          {/*<Col flex={1}>*/}
-            <strong
-              onClick={() => navigate("/")}
-              style={{ cursor: "pointer", fontSize: "190%" }}
+              style={{ cursor: "pointer", fontSize: "150%" }}
             >
-              Recook
-            </strong>
-            {/* </Typography.Text> */}
-          {/*</Col>*/}
+              RECOOK | РЕКУК
+            </text>
+
         <Menu
             onClick={onClick}
             style={{ borderBottom: "none", flex: 1, minWidth: 0 }}
@@ -52,12 +42,9 @@ export const StartApp: React.FC = () => {
             defaultSelectedKeys={[""]}
             items={headerItems}
         />
-          {/*<Col flex={"auto"}>*/}
 
-          {/*</Col>*/}
         <Space align={"center"}>
             {isLoggined() ? <ProfileButton /> : <AuthButtons /> }
-        {/*</Row>*/}
         </Space>
       </Header>
 

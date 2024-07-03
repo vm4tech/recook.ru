@@ -19,7 +19,8 @@ root.render(
   <ConfigProvider
     theme={{
       token: {
-        fontFamily: "Comfortaa",
+        // fontFamily: "Montserrat",
+        fontFamily: "DaysOne-Regular",
       },
     }}
   >

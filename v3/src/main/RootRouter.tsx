@@ -10,6 +10,7 @@ import {Dev} from "./app/Dev";
 import {Live} from "./app/Live";
 import {LoginPage} from "./components/auth/LoginPage";
 import SignupPage from "./components/auth/SignupPage";
+import {Main} from "./components/main/Main";
 
 
 export const RootRouter: React.FC = () => {
@@ -25,6 +26,7 @@ export const RootRouter: React.FC = () => {
     <Router>
       <Routes>
         <Route path="/" element={<StartApp />}>
+          <Route path="/" element={<Main />} />
           <Route path="info" element={<Dev />} />
           <Route path="live" element={<Live />} />
           {/*<Route path="profile" element={<ProfileRoute />} />*/}
@@ -42,7 +44,7 @@ export const RootRouter: React.FC = () => {
         {/*  <Route path="ingredient" element={<IngredientRoute />} />*/}
         {/*  <Route path="dish" element={<DishRoute />} />*/}
         {/*</Route>*/}
-        <Route path="*" element={<Navigate to={"/info"} replace />} />
+        <Route path="*" element={<Navigate to={"/"} replace />} />
       </Routes>
     </Router>
   );

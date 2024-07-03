@@ -1,0 +1,5 @@
+.stars_main_page {
+    scale: unset;
+    background-repeat: space;
+    background-image: url("stars_main_page.svg");
+}
