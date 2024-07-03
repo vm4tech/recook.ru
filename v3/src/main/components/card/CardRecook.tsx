@@ -11,7 +11,7 @@ const imgStyle: React.CSSProperties = {
     // position: "absolute"
 };
 
-export const CardRecook: React.FC = () => {
+export const CardRecook: React.FC<{url: string}> = ({url}) => {
     return (
         <Card
             hoverable
@@ -21,15 +21,16 @@ export const CardRecook: React.FC = () => {
         >
             <div style={{
                 position: "relative",
-                // width: 212,
-                // height: "80%",
-                // overflow: "hidden",
+                height: "100%",
+                overflow: "hidden",
             }}>
                 <img
                     style={imgStyle}
                     alt="avatar"
-                    src="https://i.artfile.ru/2880x1800_1464137_[www.ArtFile.ru].jpg"
+                    src={url}
                 ></img>
+                 {/*убрать это говно и добаить затемнение у фото слева сверху*/}
+                <Text strong style={{ paddingLeft:"2%", top: "2%", position: "absolute", color: "white", textShadow: "0.4px 0.4px 0 #000, -0.4px -0.4px 0 #000, 0.4px -0.4px 0 #000, -0.4px 0.4px 0 #000"}}>45мин</Text>
                 <Flex style={{top: "80%", position: "absolute"}}>
                     <Button>asdas</Button>
                     <Button>asdas</Button>

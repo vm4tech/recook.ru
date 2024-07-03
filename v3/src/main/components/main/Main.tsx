@@ -31,11 +31,12 @@ export const Main : React.FC = () => {
                     </Flex>
                 </Col>
                 <Col flex={"50%"} className="stars_main_page">
-                    <CardRecook />
+                    <CardRecook url="https://i.artfile.ru/2880x1800_1464137_[www.ArtFile.ru].jpg" />
                     {/*<Flex justify={"center"} align={"center"}>*/}
 
                     {/*</Flex>*/}
                 </Col>
+                <CardRecook url="https://static.tildacdn.com/tild6538-6434-4361-b062-396465373661/_bbq.jpg" />
             </Row>
         )
 }
