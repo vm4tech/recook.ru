@@ -1,4 +1,5 @@
 @import url("./main/components/main/main.css");
+@import url("./main/components/card/imageShadow.css");
 * {
   font-family: DaysOne-Regular;
   /*font-family: Montserrat;*/

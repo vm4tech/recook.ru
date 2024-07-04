@@ -1,21 +1,21 @@
 import React from "react";
-import {Button, Card, Flex, Typography} from "antd";
+import {RatingStartSvg} from "./RatingStartSvg";
+import {Button, Card, Flex, Space, Typography} from "antd";
 const { Text } = Typography
 const imgStyle: React.CSSProperties = {
     display: 'block',
-    // width: 212,
     maxHeight: 212,
-    objectFit: "cover"
-    // overflow: "hidden",
-    // height: 272,
-    // position: "absolute"
+    objectFit: "cover",
+    // boxShadow: "inset 0 0 10px 5px rgba(0,0,0,0.5)"
+    // borderRadius:"10px"
+    // zIndex:"-10"
 };
 
 export const CardRecook: React.FC<{url: string}> = ({url}) => {
     return (
         <Card
             hoverable
-            style={{width: 212, height: 272}}
+            style={{width: 212}}
             styles={{body: { padding: 0, overflow: 'hidden' } }}
 
         >
@@ -23,22 +23,44 @@ export const CardRecook: React.FC<{url: string}> = ({url}) => {
                 position: "relative",
                 height: "100%",
                 overflow: "hidden",
+                borderRadius:"10px",
+
             }}>
-                <img
-                    style={imgStyle}
-                    alt="avatar"
-                    src={url}
-                ></img>
+                <div className="image-shadow">
+                    <img
+                        style={imgStyle}
+                        alt="avatar"
+                        src={url}
+                    />
+                </div>
                  {/*убрать это говно и добаить затемнение у фото слева сверху*/}
-                <Text strong style={{ paddingLeft:"2%", top: "2%", position: "absolute", color: "white", textShadow: "0.4px 0.4px 0 #000, -0.4px -0.4px 0 #000, 0.4px -0.4px 0 #000, -0.4px 0.4px 0 #000"}}>45мин</Text>
-                <Flex style={{top: "80%", position: "absolute"}}>
-                    <Button>asdas</Button>
-                    <Button>asdas</Button>
-                </Flex>
+                <Text strong
+                      style={{
+                          paddingLeft:"5%",
+                          top: "5%",
+                          position: "absolute",
+                          color: "white",
+                          textShadow: "rgb(0, 0, 0) 1px 0px 60px, rgb(0, 0, 0) 0px 0px 60px"
+                }}
+                >
+                45мин
+                </Text>
+
+
             </div>
-            <Flex vertical align="flex-end" justify="space-between" style={{ padding: 10 }}>
+            <Flex style={{ margin:"-5% 0% 0% 5%", padding:"0% 3% 0% 3%", position: "absolute", backgroundColor:"white", borderRadius:"10px"}}>
+                <Space align="center" >
+                    <RatingStartSvg/>
+                    <Text>4.2/5</Text>
+                    {/*<Button>asdas</Button>*/}
+                </Space>
+            </Flex>
+            <Flex vertical align="flex-end" justify="space-between"
+                  style={{ padding: 10 }}
+            >
                 <Text> Хеллоуинское поке с красной икрой </Text>
-                {/*<Text> Хеллоуинское поке с красной икрой </Text>*/}
+                <Text> Хеллоуинское поке с красной икрой </Text>
+
             </Flex>
         </Card>
     )
