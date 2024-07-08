@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "./static/css/main.a4460d7a.css",
-    "main.js": "./static/js/main.eec1df68.js",
-    "static/media/stars_main_page.svg": "./static/media/stars_main_page.6b4a87791e35c1487550.svg",
-    "index.html": "./index.html",
-    "main.a4460d7a.css.map": "./static/css/main.a4460d7a.css.map",
-    "main.eec1df68.js.map": "./static/js/main.eec1df68.js.map"
+    "main.css": "/recook.ru/static/css/main.632180ec.css",
+    "main.js": "/recook.ru/static/js/main.160efe4e.js",
+    "static/media/stars_main_page.svg": "/recook.ru/static/media/stars_main_page.6b4a87791e35c1487550.svg",
+    "index.html": "/recook.ru/index.html",
+    "main.632180ec.css.map": "/recook.ru/static/css/main.632180ec.css.map",
+    "main.160efe4e.js.map": "/recook.ru/static/js/main.160efe4e.js.map"
   },
   "entrypoints": [
-    "static/css/main.a4460d7a.css",
-    "static/js/main.eec1df68.js"
+    "static/css/main.632180ec.css",
+    "static/js/main.160efe4e.js"
   ]
 }
