@@ -39,20 +39,47 @@ export const Main : React.FC = () => {
                     md={{ flex: '100%' }}
                     lg={{ flex: '100%' }}
                     xl={{ flex: '50%' }}
-                    style={{width:"50%"}} className="stars_main_page">
+                    style={{ width:"50%", padding: "1%"}} className="stars_main_page"
 
-                        <Col offset={14}>
-                            <CardRecook
-                                url="https://balthazar.club/uploads/posts/2023-09/1695454619_balthazar-club-p-belie-tsveti-s-bolshimi-butonami-pinterest-62.jpg"
-                            />
-                        </Col>
-                        <Col style={{marginTop:"-20%"}} offset={3}>
-                            <CardRecook url="https://i.artfile.ru/2880x1800_1464137_[www.ArtFile.ru].jpg" />
-                        </Col>
-                        <Col style={{marginTop:"-20%"}} offset={11}>
-                            <CardRecook url="https://static.tildacdn.com/tild6538-6434-4361-b062-396465373661/_bbq.jpg" />
-                        </Col>
-
+                >
+                        <Row align={"middle"} justify={"space-around"} gutter={[16, 16]}>
+                            <Col
+                                lg={{ flex:"100%", offset: 10}}
+                                xl={{ flex:"100%", offset: 12}}
+                            >
+                                <CardRecook
+                                    isPopular
+                                    photoUrl="https://balthazar.club/uploads/posts/2023-09/1695454619_balthazar-club-p-belie-tsveti-s-bolshimi-butonami-pinterest-62.jpg"
+                                    cookTime={33}
+                                    name="Рыба в с легким салатом"
+                                    rating={2.4}
+                                    nowCooking={1}
+                                />
+                            </Col>
+                            <Col
+                                lg={{ offset: 2 }}
+                                xl={{ offset: 6 }}
+                            >
+                                <CardRecook
+                                    photoUrl="https://i.artfile.ru/2880x1800_1464137_[www.ArtFile.ru].jpg"
+                                    cookTime={60}
+                                    name="Люля из человечены в пикантом соусе тартар"
+                                    rating={4.9}
+                                    genre={"Вегетарианство"}
+                                />
+                            </Col>
+                            <Col>
+                                <CardRecook
+                                    isPopular
+                                    photoUrl="https://static.tildacdn.com/tild6538-6434-4361-b062-396465373661/_bbq.jpg"
+                                    cookTime={25}
+                                    name="Хеллоуинское поке с красной икрой"
+                                    genre={"Жопа с ручкой"}
+                                    rating={3.4}
+                                    nowCooking={123}
+                                />
+                            </Col>
+                        </Row>
                 </Col>
             </Row>
         )
