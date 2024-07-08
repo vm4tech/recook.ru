@@ -8,6 +8,7 @@ import {Outlet, useNavigate} from "react-router-dom";
 import React from "react";
 import {AuthButtons} from "./components/auth/AuthButtons";
 import {ProfileButton} from "./components/profile";
+import {FooterRecook} from "./app/Footer/FooterRecook";
 
 const { Title } = Typography;
 
@@ -49,9 +50,7 @@ export const StartApp: React.FC = () => {
       </Header>
 
       <Outlet />
-      <Footer style={{ textAlign: "center", backgroundColor: "white" }}>
-        Created by <b>Recook</b>
-      </Footer>
+        <FooterRecook />
     </Layout>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { PlayCircleFilled, ClockCircleFilled, FireFilled, FireOutlined, FireTwoTone} from '@ant-design/icons';
 import {RatingStartSvg} from "./RatingStartSvg";
-import {Badge, Button, Card, Flex, Space, Typography} from "antd";
+import {Badge, Button, Card, Divider, Flex, Space, Typography} from "antd";
 import {blue} from "@ant-design/colors";
 const { Text } = Typography
 const imgStyle: React.CSSProperties = {
@@ -77,7 +77,7 @@ export const CardRecook: React.FC<CardRecookType> = ({
                     <Flex wrap gap={5}>
                         {nowCooking ?
                             <Button
-                                size={"small"} style={{backgroundColor: "#F35B04", borderRadius: "10px"}} type={"primary"}
+                                size={"small"} style={{backgroundColor: "#F35B04", borderRadius: "20px"}} type={"primary"}
                                 icon={<PlayCircleFilled />}
                             >
                                 {nowCooking}
@@ -86,7 +86,7 @@ export const CardRecook: React.FC<CardRecookType> = ({
                         }
 
                         {genre ?
-                            <Button size={"small"} style={{backgroundColor: "#000000", borderRadius: "10px"}} type={"primary"}>
+                            <Button size={"small"} style={{backgroundColor: "#000000", borderRadius: "20px"}} type={"primary"}>
                                 {genre}
                             </Button>
                             : null
