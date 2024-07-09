@@ -12,6 +12,7 @@ import {LoginPage} from "./components/auth/LoginPage";
 import SignupPage from "./components/auth/SignupPage";
 import {Main} from "./components/main/Main";
 import {Recipes} from "./components/recipes/Recipes";
+import {Recipe} from "./components/recipes/Recipe";
 
 
 export const RootRouter: React.FC = () => {
@@ -39,7 +40,7 @@ export const RootRouter: React.FC = () => {
                         {/*<Route path="all" element={<DishRoute />}/>*/}
                         {/*<Route path=":id" element={<DishPage />}/>*/}
                     </Route>
-
+                    <Route path="recipe/:id" element={<Recipe/>}/>
                 </Route>
                 {/*<Route path="admin" element={<Admin />}>*/}
                 {/*  <Route path="ingredient" element={<IngredientRoute />} />*/}

@@ -6,7 +6,7 @@ import {Col, Row} from "antd";
  **/
 export const Wrapper: React.FC<React.PropsWithChildren> = (props) =>
     <Row justify="center">
-        <Col xl={16}
+        <Col xl={18}
              lg={18}
              md={20}
              sm={22}

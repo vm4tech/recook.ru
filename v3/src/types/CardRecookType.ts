@@ -1,4 +1,5 @@
 type CardRecookType = {
+    id?: string,
     photoUrl: string,
     cookTime: number,
     rating: number,

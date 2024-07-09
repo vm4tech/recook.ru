@@ -4,6 +4,7 @@ import {RatingStartSvg} from "./RatingStartSvg";
 import {Badge, Button, Card, Divider, Flex, Space, Typography} from "antd";
 import {blue} from "@ant-design/colors";
 import {BASE_BORDER_RADIUS} from "../../utils/Contants";
+import {useNavigate} from "react-router-dom";
 
 const {Text} = Typography
 const imgStyle: React.CSSProperties = {
@@ -25,6 +26,7 @@ const cardStyle: React.CSSProperties = {
 
 export const CardRecook: React.FC<CardRecookType> = (
     {
+        id = "76e46497-3182-4d37-a296-8c67be3411f3",
         photoUrl,
         cookTime,
         rating = 0,
@@ -35,6 +37,7 @@ export const CardRecook: React.FC<CardRecookType> = (
         name
     }
 ) => {
+    const navigate = useNavigate()
     const totalTime = () => {
         const minutes = cookTime % 60
         const hours = cookTime / 60
@@ -45,6 +48,7 @@ export const CardRecook: React.FC<CardRecookType> = (
     return (
         <Badge.Ribbon text={isPopular ? "Популярно" : null} color={"#F35B04"}>
             <Card
+                onClick={() => navigate(`/recipe/${id}`)}
                 hoverable
                 style={cardStyle}
                 styles={{body: {padding: 0, overflow: 'hidden'}}}
@@ -54,7 +58,6 @@ export const CardRecook: React.FC<CardRecookType> = (
                     height: "100%",
                     overflow: "hidden",
                     borderRadius: BASE_BORDER_RADIUS,
-
                 }}>
                     <div className="image-shadow">
                         <img
