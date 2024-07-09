@@ -43,10 +43,7 @@ export const Main : React.FC = () => {
 
                 >
                         <Row align={"middle"} justify={"space-around"} gutter={[16, 16]}>
-                            <Col
-                                lg={{ flex:"100%", offset: 10}}
-                                xl={{ flex:"100%", offset: 12}}
-                            >
+                            <Col>
                                 <CardRecook
                                     isPopular
                                     photoUrl="https://balthazar.club/uploads/posts/2023-09/1695454619_balthazar-club-p-belie-tsveti-s-bolshimi-butonami-pinterest-62.jpg"
@@ -56,10 +53,7 @@ export const Main : React.FC = () => {
                                     nowCooking={1}
                                 />
                             </Col>
-                            <Col
-                                lg={{ offset: 2 }}
-                                xl={{ offset: 6 }}
-                            >
+                            <Col>
                                 <CardRecook
                                     photoUrl="https://i.artfile.ru/2880x1800_1464137_[www.ArtFile.ru].jpg"
                                     cookTime={60}

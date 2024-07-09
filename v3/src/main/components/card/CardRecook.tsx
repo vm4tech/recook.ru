@@ -6,9 +6,19 @@ import {blue} from "@ant-design/colors";
 const { Text } = Typography
 const imgStyle: React.CSSProperties = {
     display: 'block',
+    height: "30vw",
     maxHeight: 212,
+    minHeight: 159,
     objectFit: "cover",
 };
+
+const cardStyle: React.CSSProperties = {
+    // width: 212,
+    width: "30vw",
+    minWidth: 159,
+    maxWidth: 212,
+    // minHeight: 300,
+}
 
 export const CardRecook: React.FC<CardRecookType> = ({
     photoUrl,
@@ -28,12 +38,12 @@ export const CardRecook: React.FC<CardRecookType> = ({
 
 
     return (
+
         <Badge.Ribbon text={isPopular ? "Популярно" : null} color={"#F35B04"}>
             <Card
                 hoverable
-                style={{width: 212}}
+                style={cardStyle}
                 styles={{body: { padding: 0, overflow: 'hidden' } }}
-
             >
                 <div style={{
                     position: "relative",
