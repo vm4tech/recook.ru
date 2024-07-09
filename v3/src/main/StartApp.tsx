@@ -1,56 +1,58 @@
 import {Col, Menu, MenuProps, Row, Space, Typography} from "antd";
-import Layout, { Footer, Header } from "antd/lib/layout/layout";
+import Layout, {Footer, Header} from "antd/lib/layout/layout";
 
-import { getItem } from "./utils/utils";
-import { WhiteColor } from "./utils/colors";
-import { isAdmin, isLoggined } from "./utils/CookieUtils";
+import {getItem} from "./utils/utils";
+import {WhiteColor} from "./utils/colors";
+import {isAdmin, isLoggined} from "./utils/CookieUtils";
 import {Outlet, useNavigate} from "react-router-dom";
 import React from "react";
 import {AuthButtons} from "./components/auth/AuthButtons";
 import {ProfileButton} from "./components/profile";
 import {FooterRecook} from "./app/Footer/FooterRecook";
 
-const { Title } = Typography;
+const {Title} = Typography;
 
 const headerItems: MenuProps["items"] = [
     getItem("Главная", "main"),
-  isAdmin() ? getItem("Ингредиенты", "ingredient") : null,
-  isLoggined() ? getItem("Блюда", "dishes/all") : null,
-  isLoggined() ? getItem("История", "history") : null,
-  isLoggined() ? getItem("Профиль", "profile") : null,
+    isAdmin() ? getItem("Ингредиенты", "ingredient") : null,
+    isLoggined() ? getItem("Блюда", "recipes/all") : null,
+    isLoggined() ? getItem("История", "history") : null,
+    isLoggined() ? getItem("Профиль", "profile") : null,
 ];
 
 export const StartApp: React.FC = () => {
-  const navigate = useNavigate();
-  const onClick: MenuProps["onClick"] = (e) => {
-    navigate(`/${e.key}`);
-  };
-  return (
-    <Layout>
-      <Header style={{ display: 'flex', alignItems: 'center', ...WhiteColor }} className="header">
-            <text
-              onClick={() => navigate("/")}
-              style={{ cursor: "pointer", fontSize: "150%" }}
-            >
-              RECOOK | РЕКУК
-            </text>
+    const navigate = useNavigate();
+    const onClick: MenuProps["onClick"] = (e) => {
+        navigate(`/${e.key}`);
+    };
 
-        <Menu
-            onClick={onClick}
-            style={{ borderBottom: "none", flex: 1, minWidth: 0 }}
-            inlineCollapsed={false}
-            mode="horizontal"
-            defaultSelectedKeys={[""]}
-            items={headerItems}
-        />
+    return (
+        <Layout>
+            <Header style={{display: 'flex', alignItems: 'center', ...WhiteColor}} className="header">
+                <text
+                    onClick={() => navigate("/")}
+                    style={{cursor: "pointer", fontSize: "150%"}}
+                >
+                    RECOOK | РЕКУК
+                </text>
 
-        <Space align={"center"}>
-            {isLoggined() ? <ProfileButton /> : <AuthButtons /> }
-        </Space>
-      </Header>
+                <Menu
+                    onClick={onClick}
+                    style={{borderBottom: "none", flex: 1, minWidth: 0}}
+                    inlineCollapsed={false}
+                    mode="horizontal"
+                    defaultSelectedKeys={[""]}
+                    items={headerItems}
+                />
 
-      <Outlet />
-        <FooterRecook />
-    </Layout>
-  );
+                <Space align={"center"}>
+                    {isLoggined() ? <ProfileButton/> : <AuthButtons/>}
+                </Space>
+            </Header>
+
+            <Outlet/>
+
+            <FooterRecook/>
+        </Layout>
+    );
 };
