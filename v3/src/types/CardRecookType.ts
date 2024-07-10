@@ -5,7 +5,7 @@ type CardRecookType = {
     rating: number,
     avatarUrl?: string,
     nowCooking?: number,
-    genre?: string,
+    genres?: string[],
     isPopular?: boolean,
     name: string
 }

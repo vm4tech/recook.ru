@@ -9,7 +9,8 @@ import React from "react";
 import {AuthButtons} from "./components/auth/AuthButtons";
 import {ProfileButton} from "./components/profile";
 import {FooterRecook} from "./app/Footer/FooterRecook";
-import {LogoRecook} from "./app/Footer/Logos/Recook/LogoRecook";
+import {LogoRecook} from "./app/Logos/Recook/LogoRecook";
+import {H1_FONT_SIZE} from "./utils/Contants";
 
 const {Title, Text} = Typography;
 
@@ -34,7 +35,7 @@ export const StartApp: React.FC = () => {
                     <LogoRecook/>
                     <Text
                         onClick={() => navigate("/")}
-                        style={{cursor: "pointer", fontSize: "200%"}}
+                        style={{cursor: "pointer", ...H1_FONT_SIZE}}
                     >
                         РЕКУК
                     </Text>

@@ -1,13 +1,11 @@
 import React, {useEffect, useState} from "react";
-import {Button, Col, Collapse, Divider, Flex, Layout, Menu, MenuProps, Row, Typography} from "antd";
-import {Wrapper} from "../Wrapper";
+import {Col, Divider, Flex, Menu, Row, Typography} from "antd";
 import {MailOutlined, AppstoreOutlined, SettingOutlined, MenuUnfoldOutlined, MenuFoldOutlined} from "@ant-design/icons";
-import {BASE_BORDER_RADIUS} from "../../utils/Contants";
+import {BASE_BORDER_RADIUS, BASE_NOTE_STYLE, BASE_PADDING, H1_FONT_SIZE} from "../../utils/Contants";
 import {MenuItem} from "../../utils/utils";
 import {CardRecook} from "../card/CardRecook";
 
 const {Text} = Typography
-// const {Sider, Content} = Layout
 const items: MenuItem[] = [
     {
         key: '1',
@@ -75,32 +73,29 @@ export const Recipes: React.FC = () => {
         };
     }, [])
     return (
-        <Row style={{padding: "20px"}}>
+        <Row style={BASE_PADDING}>
             <Col flex={"30%"} style={{
                 display: isDisplayNone ? "none" : "block"
             }}>
                 <Flex vertical gap={"small"}>
-                    <Text style={{fontSize: "200%"}}>Популярные фильтры</Text>
+                    <Text style={H1_FONT_SIZE}>Популярные фильтры</Text>
                     <Divider/>
                     <Menu
-                        style={{borderRadius: BASE_BORDER_RADIUS}}
+                        style={BASE_BORDER_RADIUS}
                         theme={"light"}
                         mode="inline"
                         items={items}
                     />
-                    <Col style={{padding: 10, backgroundColor: "white", borderRadius: BASE_BORDER_RADIUS}}>
-                        <Text style={{fontSize: "200%"}}>Дополнительная информация</Text>
+                    <Col style={BASE_NOTE_STYLE}>
+                        <Text style={H1_FONT_SIZE}>Дополнительная информация</Text>
                         <br/>
                         <Text>А почему так?</Text>
                     </Col>
                 </Flex>
             </Col>
             <Col flex={isDisplayNone ? "100%" : "70%"}>
-                <Flex wrap gap={"large"} style={{padding: "10px"}}>
-                    <Flex
-                        wrap gap={"small"}
-                        style={{backgroundColor: "white", padding: "20px", borderRadius: BASE_BORDER_RADIUS}}
-                    >
+                <Flex wrap gap={"large"} style={isDisplayNone ? {} : BASE_PADDING}>
+                    <Flex wrap gap={"small"} style={BASE_NOTE_STYLE}>
                         <Divider orientation={"left"}> Лучшие рецепты по рейтингу </Divider>
                         <CardRecook photoUrl={url} cookTime={1} rating={5} name={"Всем"}/>
                         <CardRecook photoUrl={url} cookTime={1} rating={5} name={"Привет"}/>
@@ -110,16 +105,14 @@ export const Recipes: React.FC = () => {
                         <CardRecook photoUrl={url} cookTime={1} rating={5} name={"это"}/>
                         <CardRecook photoUrl={url} cookTime={1} rating={5} name={"recook!"}/>
                     </Flex>
-                    <Flex wrap gap={"small"}
-                          style={{backgroundColor: "white", padding: "20px", borderRadius: BASE_BORDER_RADIUS}}>
+                    <Flex wrap gap={"small"} style={BASE_NOTE_STYLE}>
                         <Divider orientation={"left"}> Популярные рецепты </Divider>
                         <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"Всем"} isPopular/>
                         <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"Привет"} isPopular/>
                         <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"это"} isPopular/>
                         <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"recook!"} isPopular/>
                     </Flex>
-                    <Flex wrap gap={"small"}
-                          style={{backgroundColor: "white", padding: "20px", borderRadius: BASE_BORDER_RADIUS}}>
+                    <Flex wrap gap={"small"} style={BASE_NOTE_STYLE}>
                         <Divider orientation={"left"}> Сейчас готовят </Divider>
                         <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"Всем"} nowCooking={222}/>
                         <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"Привет"} nowCooking={44}/>

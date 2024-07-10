@@ -3,8 +3,9 @@ import {PlayCircleFilled, ClockCircleFilled, FireFilled, FireOutlined, FireTwoTo
 import {RatingStartSvg} from "./RatingStartSvg";
 import {Badge, Button, Card, Divider, Flex, Space, Typography} from "antd";
 import {blue} from "@ant-design/colors";
-import {BASE_BORDER_RADIUS} from "../../utils/Contants";
+import {BASE_BORDER_RADIUS, PADDING_10} from "../../utils/Contants";
 import {useNavigate} from "react-router-dom";
+import {BASE_RECOOK_ORANGE_BC, WhiteColor} from "../../utils/colors";
 
 const {Text} = Typography
 
@@ -17,15 +18,43 @@ const imgStyle: React.CSSProperties = {
     minHeight: MIN_CARD_WIDTH,
     objectFit: "cover",
 };
+const imgDivBlockStyle: React.CSSProperties = {
+    position: "relative",
+    height: "100%",
+    overflow: "hidden",
+    ...BASE_BORDER_RADIUS,
+}
 
 const cardStyle: React.CSSProperties = {
-    // width: 212,
     width: "30vw",
     minWidth: MIN_CARD_WIDTH,
     maxWidth: MAX_CARD_WIDTH,
-    borderRadius: BASE_BORDER_RADIUS
-    // minHeight: 300,
+    ...BASE_BORDER_RADIUS
 }
+const ratingStyle: React.CSSProperties = {
+    margin: "-5% 0% 0% 5%",
+    padding: "0% 3% 0% 3%",
+    position: "absolute",
+    ...WhiteColor,
+    ...BASE_BORDER_RADIUS
+}
+const cookTimeStyle: React.CSSProperties = {
+    paddingLeft: "5%",
+    top: "5%",
+    position: "absolute",
+    color: "white",
+    textShadow: "rgb(0, 0, 0) 1px 0px 60px, rgb(0, 0, 0) 0px 0px 60px"
+}
+
+const genresButtonStyle = (color = `#${Math.random().toString(16).substr(-6)}`): React.CSSProperties => {
+    return {
+        backgroundColor: color,
+        fontSize: "85%",
+        ...BASE_BORDER_RADIUS
+    }
+
+}
+const nowCookingStyle: React.CSSProperties = {...BASE_RECOOK_ORANGE_BC, ...BASE_BORDER_RADIUS}
 
 export const CardRecook: React.FC<CardRecookType> = (
     {
@@ -35,18 +64,12 @@ export const CardRecook: React.FC<CardRecookType> = (
         rating = 0,
         avatarUrl,
         nowCooking,
-        genre,
+        genres,
         isPopular,
         name
     }
 ) => {
     const navigate = useNavigate()
-    const totalTime = () => {
-        const minutes = cookTime % 60
-        const hours = cookTime / 60
-        return hours >= 1 ? `${hours}ч ${minutes}мин` : `${minutes}мин`
-    }
-
 
     return (
         <Badge.Ribbon text={isPopular ? "Популярно" : null} color={"#F35B04"}>
@@ -56,12 +79,7 @@ export const CardRecook: React.FC<CardRecookType> = (
                 style={cardStyle}
                 styles={{body: {padding: 0, overflow: 'hidden'}}}
             >
-                <div style={{
-                    position: "relative",
-                    height: "100%",
-                    overflow: "hidden",
-                    borderRadius: BASE_BORDER_RADIUS,
-                }}>
+                <div style={imgDivBlockStyle}>
                     <div className="image-shadow">
                         <img
                             style={imgStyle}
@@ -69,62 +87,35 @@ export const CardRecook: React.FC<CardRecookType> = (
                             alt={name}
                         />
                     </div>
-                    <Text
-                        strong
-                        style={{
-                            paddingLeft: "5%",
-                            top: "5%",
-                            position: "absolute",
-                            color: "white",
-                            textShadow: "rgb(0, 0, 0) 1px 0px 60px, rgb(0, 0, 0) 0px 0px 60px"
-                        }}
-                    >
-                        <ClockCircleFilled/> {totalTime()}
+                    <Text strong style={cookTimeStyle}>
+                        <ClockCircleFilled/> {cookTime.toTotalTime()}
                     </Text>
 
                 </div>
 
-                <Flex style={{
-                    margin: "-5% 0% 0% 5%",
-                    padding: "0% 3% 0% 3%",
-                    position: "absolute",
-                    backgroundColor: "white",
-                    borderRadius: BASE_BORDER_RADIUS
-                }}>
-                    <Space align="center">
+                <Flex align={"center"} style={ratingStyle}>
+                    <Space>
                         <RatingStartSvg/>
                         <Text>{rating}/5</Text>
                     </Space>
                 </Flex>
-                <Flex gap={5} vertical align="flex-start"
-                      style={{padding: 10}}
-                >
+                <Flex gap={5} vertical align="flex-start" style={PADDING_10}>
                     <Text> {name} </Text>
+
                     <Flex wrap gap={5}>
                         {nowCooking ?
-                            <Button
-                                size={"small"} style={{backgroundColor: "#F35B04", borderRadius: BASE_BORDER_RADIUS}}
-                                type={"primary"}
-                                icon={<PlayCircleFilled/>}
-                            >
+                            <Button size={"small"} style={nowCookingStyle} type={"primary"} icon={<PlayCircleFilled/>}>
                                 {nowCooking}
-                            </Button>
-                            : null
+                            </Button> : null
                         }
 
-                        {genre ?
-                            <Button size={"small"}
-                                    style={{
-                                        backgroundColor: "#000000",
-                                        fontSize: "85%",
-                                        borderRadius: BASE_BORDER_RADIUS
-                                    }}
-                                    type={"primary"}>
+                        {genres?.map(genre =>
+                            <Button size={"small"} style={genresButtonStyle()} type={"primary"}>
                                 {genre}
                             </Button>
-                            : null
-                        }
+                        )}
                     </Flex>
+
                 </Flex>
 
             </Card>

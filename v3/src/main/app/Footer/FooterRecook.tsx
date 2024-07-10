@@ -1,9 +1,10 @@
 import React from "react";
 import {Footer} from "antd/lib/layout/layout";
-import {LogoRecook} from "./Logos/Recook/LogoRecook";
+import {LogoRecook} from "../Logos/Recook/LogoRecook";
 import {Col, Divider, Flex, Row, Typography} from "antd";
-import {VKLogoButton} from "./Logos/VK/VKLogoButton";
-import {TelegramLogoButton} from "./Logos/Telegram/TelegramLogoButton";
+import {VKLogoButton} from "../Logos/VK/VKLogoButton";
+import {TelegramLogoButton} from "../Logos/Telegram/TelegramLogoButton";
+import {H1_FONT_SIZE} from "../../utils/Contants";
 
 const {Text} = Typography
 const footerStyle: React.CSSProperties = {
@@ -33,7 +34,7 @@ export const FooterRecook: React.FC = () => {
                     <Flex align={"center"} gap={"small"}>
                         <LogoRecook/>
                         <Text
-                            style={{cursor: "pointer", fontSize: "200%", color: "white"}}
+                            style={{cursor: "pointer", ...H1_FONT_SIZE, color: "white"}}
                         >
                             РЕКУК
                         </Text>
