@@ -1,5 +1,6 @@
 [![Frontend alive](https://github.com/vm4tech/recook.ru/actions/workflows/deploy.yaml/badge.svg)](https://github.com/vm4tech/recook.ru/actions/workflows/deploy.yaml)
-
+### Пока тут - https://vm4tech.github.io/recook.ru/
+### потом тут - https://recook.ru
 <div align="center">
   
 # Recook
