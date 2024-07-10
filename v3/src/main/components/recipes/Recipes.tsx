@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Button, Col, Collapse, Divider, Flex, Layout, Menu, MenuProps, Row, Typography} from "antd";
 import {Wrapper} from "../Wrapper";
 import {MailOutlined, AppstoreOutlined, SettingOutlined, MenuUnfoldOutlined, MenuFoldOutlined} from "@ant-design/icons";
@@ -62,11 +62,22 @@ const items: MenuItem[] = [
 ];
 const url = "https://balthazar.club/uploads/posts/2023-09/1695454619_balthazar-club-p-belie-tsveti-s-bolshimi-butonami-pinterest-62.jpg";
 export const Recipes: React.FC = () => {
+    const [displayWidth, setDisplayWidth] = useState(window.innerWidth)
+    const isDisplayNone = displayWidth < 1200
+    const handleResize = () => {
+        setDisplayWidth(window.innerWidth)
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [])
     return (
         <Row style={{padding: "20px"}}>
             <Col flex={"30%"} style={{
-                // width: "30%",
-                // TODO: display: "none" для мелких ЭКРАНОВ
+                display: isDisplayNone ? "none" : "block"
             }}>
                 <Flex vertical gap={"small"}>
                     <Text style={{fontSize: "200%"}}>Популярные фильтры</Text>
@@ -84,10 +95,12 @@ export const Recipes: React.FC = () => {
                     </Col>
                 </Flex>
             </Col>
-            <Col flex={"70%"}>
-                <Flex wrap gap={"large"} style={{padding: "20px"}}>
-                    <Flex gap={"small"} wrap
-                          style={{backgroundColor: "white", padding: "20px", borderRadius: BASE_BORDER_RADIUS}}>
+            <Col flex={isDisplayNone ? "100%" : "70%"}>
+                <Flex wrap gap={"large"} style={{padding: "10px"}}>
+                    <Flex
+                        wrap gap={"small"}
+                        style={{backgroundColor: "white", padding: "20px", borderRadius: BASE_BORDER_RADIUS}}
+                    >
                         <Divider orientation={"left"}> Лучшие рецепты по рейтингу </Divider>
                         <CardRecook photoUrl={url} cookTime={1} rating={5} name={"Всем"}/>
                         <CardRecook photoUrl={url} cookTime={1} rating={5} name={"Привет"}/>
@@ -97,7 +110,7 @@ export const Recipes: React.FC = () => {
                         <CardRecook photoUrl={url} cookTime={1} rating={5} name={"это"}/>
                         <CardRecook photoUrl={url} cookTime={1} rating={5} name={"recook!"}/>
                     </Flex>
-                    <Flex gap={"small"} wrap
+                    <Flex wrap gap={"small"}
                           style={{backgroundColor: "white", padding: "20px", borderRadius: BASE_BORDER_RADIUS}}>
                         <Divider orientation={"left"}> Популярные рецепты </Divider>
                         <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"Всем"} isPopular/>
@@ -105,7 +118,7 @@ export const Recipes: React.FC = () => {
                         <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"это"} isPopular/>
                         <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"recook!"} isPopular/>
                     </Flex>
-                    <Flex gap={"small"} wrap
+                    <Flex wrap gap={"small"}
                           style={{backgroundColor: "white", padding: "20px", borderRadius: BASE_BORDER_RADIUS}}>
                         <Divider orientation={"left"}> Сейчас готовят </Divider>
                         <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"Всем"} nowCooking={222}/>

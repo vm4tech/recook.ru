@@ -7,19 +7,22 @@ import {BASE_BORDER_RADIUS} from "../../utils/Contants";
 import {useNavigate} from "react-router-dom";
 
 const {Text} = Typography
+
+const MIN_CARD_WIDTH = 140;
+const MAX_CARD_WIDTH = 212;
 const imgStyle: React.CSSProperties = {
     display: 'block',
     height: "30vw",
-    maxHeight: 212,
-    minHeight: 159,
+    maxHeight: MAX_CARD_WIDTH,
+    minHeight: MIN_CARD_WIDTH,
     objectFit: "cover",
 };
 
 const cardStyle: React.CSSProperties = {
     // width: 212,
     width: "30vw",
-    minWidth: 159,
-    maxWidth: 212,
+    minWidth: MIN_CARD_WIDTH,
+    maxWidth: MAX_CARD_WIDTH,
     borderRadius: BASE_BORDER_RADIUS
     // minHeight: 300,
 }
@@ -111,7 +114,11 @@ export const CardRecook: React.FC<CardRecookType> = (
 
                         {genre ?
                             <Button size={"small"}
-                                    style={{backgroundColor: "#000000", borderRadius: BASE_BORDER_RADIUS}}
+                                    style={{
+                                        backgroundColor: "#000000",
+                                        fontSize: "85%",
+                                        borderRadius: BASE_BORDER_RADIUS
+                                    }}
                                     type={"primary"}>
                                 {genre}
                             </Button>

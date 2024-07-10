@@ -1,4 +1,4 @@
-import {Col, Menu, MenuProps, Row, Space, Typography} from "antd";
+import {Col, Flex, Menu, MenuProps, Row, Space, Typography} from "antd";
 import Layout, {Footer, Header} from "antd/lib/layout/layout";
 
 import {getItem} from "./utils/utils";
@@ -9,8 +9,9 @@ import React from "react";
 import {AuthButtons} from "./components/auth/AuthButtons";
 import {ProfileButton} from "./components/profile";
 import {FooterRecook} from "./app/Footer/FooterRecook";
+import {LogoRecook} from "./app/Footer/Logos/Recook/LogoRecook";
 
-const {Title} = Typography;
+const {Title, Text} = Typography;
 
 const headerItems: MenuProps["items"] = [
     getItem("Главная", "main"),
@@ -29,13 +30,15 @@ export const StartApp: React.FC = () => {
     return (
         <Layout>
             <Header style={{display: 'flex', alignItems: 'center', ...WhiteColor}} className="header">
-                <text
-                    onClick={() => navigate("/")}
-                    style={{cursor: "pointer", fontSize: "150%"}}
-                >
-                    RECOOK | РЕКУК
-                </text>
-
+                <Flex align={"center"} gap={"small"}>
+                    <LogoRecook/>
+                    <Text
+                        onClick={() => navigate("/")}
+                        style={{cursor: "pointer", fontSize: "200%"}}
+                    >
+                        РЕКУК
+                    </Text>
+                </Flex>
                 <Menu
                     onClick={onClick}
                     style={{borderBottom: "none", flex: 1, minWidth: 0}}
@@ -45,9 +48,9 @@ export const StartApp: React.FC = () => {
                     items={headerItems}
                 />
 
-                <Space align={"center"}>
-                    {isLoggined() ? <ProfileButton/> : <AuthButtons/>}
-                </Space>
+                {/*<Flex wrap align={"center"}>*/}
+                {/*    {isLoggined() ? <ProfileButton/> : <AuthButtons/>}*/}
+                {/*</Flex>*/}
             </Header>
 
             <Outlet/>
