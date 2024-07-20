@@ -12,12 +12,14 @@ export const StickyWrapper: React.FC<React.PropsWithChildren<StickyWrapperType>>
         style,
         vertical = false,
         gap,
-        withDefaultStyle = true
+        withDefaultStyle = true,
+        justify = "center",
+        align = "center"
     }
 ) => {
     const defaultStyle = withDefaultStyle ? BASE_NOTE_STYLE : {}
     return (
-        <Flex wrap justify={"center"} align={"center"} vertical={vertical} gap={gap}
+        <Flex wrap justify={justify} align={align} vertical={vertical} gap={gap}
               style={{...defaultStyle, ...style}}>
             {children}
         </Flex>

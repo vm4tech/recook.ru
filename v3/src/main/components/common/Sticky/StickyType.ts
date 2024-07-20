@@ -4,6 +4,6 @@ export type StickyType = BaseStickyType & StickyWrapperType
 
 type BaseStickyType = {
     mainText: string,
-    secondText: string
+    secondText?: string
     italic?: boolean
 }

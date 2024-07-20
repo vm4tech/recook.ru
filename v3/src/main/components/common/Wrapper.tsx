@@ -8,8 +8,8 @@ export const Wrapper: React.FC<React.PropsWithChildren> = (props) =>
     <Row justify="center">
         <Col xl={18}
              lg={18}
-             md={20}
-             sm={22}
+             md={24}
+             sm={24}
              xs={24}
              style={{padding: 20}}
         >

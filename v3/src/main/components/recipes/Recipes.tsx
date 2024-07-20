@@ -95,24 +95,25 @@ export const Recipes: React.FC = () => {
             </Col>
             <Col flex={isDisplayNone ? "100%" : "70%"}>
                 <Flex wrap gap={"large"} style={isDisplayNone ? {} : BASE_PADDING}>
-                    <Flex wrap gap={"small"} style={BASE_NOTE_STYLE}>
+                    <Flex wrap gap={"small"} style={isDisplayNone ? {} : BASE_NOTE_STYLE}>
                         <Divider orientation={"left"}> Лучшие рецепты по рейтингу </Divider>
                         <CardRecook photoUrl={url} cookTime={1} rating={5} name={"Всем"}/>
-                        <CardRecook photoUrl={url} cookTime={1} rating={5} name={"Привет"}/>
+                        <CardRecook photoUrl={url} cookTime={1} rating={5}
+                                    name={"0123456789012345678901234567890123456789"}/>
                         <CardRecook photoUrl={url} cookTime={1} rating={5} name={"Меня"} isPopular/>
                         <CardRecook photoUrl={url} cookTime={1} rating={5} name={"зовут"}/>
                         <CardRecook photoUrl={url} cookTime={1} rating={5} name={"vm4tech"}/>
                         <CardRecook photoUrl={url} cookTime={1} rating={5} name={"это"}/>
                         <CardRecook photoUrl={url} cookTime={1} rating={5} name={"recook!"}/>
                     </Flex>
-                    <Flex wrap gap={"small"} style={BASE_NOTE_STYLE}>
+                    <Flex wrap gap={"small"} style={isDisplayNone ? {} : BASE_NOTE_STYLE}>
                         <Divider orientation={"left"}> Популярные рецепты </Divider>
                         <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"Всем"} isPopular/>
                         <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"Привет"} isPopular/>
                         <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"это"} isPopular/>
                         <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"recook!"} isPopular/>
                     </Flex>
-                    <Flex wrap gap={"small"} style={BASE_NOTE_STYLE}>
+                    <Flex wrap gap={"small"} style={isDisplayNone ? {} : BASE_NOTE_STYLE}>
                         <Divider orientation={"left"}> Сейчас готовят </Divider>
                         <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"Всем"} nowCooking={222}/>
                         <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"Привет"} nowCooking={44}/>

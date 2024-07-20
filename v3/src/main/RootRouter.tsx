@@ -12,7 +12,7 @@ import {LoginPage} from "./components/auth/LoginPage";
 import SignupPage from "./components/auth/SignupPage";
 import {Main} from "./components/main/Main";
 import {Recipes} from "./components/recipes/Recipes";
-import {Recipe} from "./components/recipes/Recipe";
+import {Recipe} from "./components/recipes/Recipe/Recipe";
 
 
 export const RootRouter: React.FC = () => {

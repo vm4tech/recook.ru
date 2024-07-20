@@ -6,4 +6,6 @@ export type StickyWrapperType = {
     style?: React.CSSProperties,
     withDefaultStyle?: boolean,
     gap?: React.CSSProperties['gap'] | SizeType;
+    justify?: React.CSSProperties['justifyContent'];
+    align?: React.CSSProperties['alignItems'];
 }

@@ -3,9 +3,10 @@ import {PlayCircleFilled, ClockCircleFilled, FireFilled, FireOutlined, FireTwoTo
 import {RatingStartSvg} from "./RatingStartSvg";
 import {Badge, Button, Card, Divider, Flex, Space, Typography} from "antd";
 import {blue} from "@ant-design/colors";
-import {BASE_BORDER_RADIUS, PADDING_10} from "../../utils/Contants";
+import {BASE_BORDER_RADIUS, LIGHT_FONT_SIZE_2, LIGHT_FONT_SIZE_3, PADDING_10} from "../../utils/Contants";
 import {useNavigate} from "react-router-dom";
 import {BASE_RECOOK_ORANGE_BC, WhiteColor} from "../../utils/colors";
+import {Ribbon} from "../common/Ribbon/Ribbon";
 
 const {Text} = Typography
 
@@ -15,7 +16,7 @@ const imgStyle: React.CSSProperties = {
     display: 'block',
     height: "30vw",
     maxHeight: MAX_CARD_WIDTH,
-    minHeight: MIN_CARD_WIDTH,
+    minHeight: MIN_CARD_WIDTH + 30,
     objectFit: "cover",
 };
 const imgDivBlockStyle: React.CSSProperties = {
@@ -26,7 +27,7 @@ const imgDivBlockStyle: React.CSSProperties = {
 }
 
 const cardStyle: React.CSSProperties = {
-    width: "30vw",
+    width: "43vw",
     minWidth: MIN_CARD_WIDTH,
     maxWidth: MAX_CARD_WIDTH,
     ...BASE_BORDER_RADIUS
@@ -56,6 +57,7 @@ const genresButtonStyle = (color = `#${Math.random().toString(16).substr(-6)}`):
 }
 const nowCookingStyle: React.CSSProperties = {...BASE_RECOOK_ORANGE_BC, ...BASE_BORDER_RADIUS}
 
+/** TODO: Сделать предпросмотр */
 export const CardRecook: React.FC<CardRecookType> = (
     {
         id = "76e46497-3182-4d37-a296-8c67be3411f3",
@@ -70,9 +72,14 @@ export const CardRecook: React.FC<CardRecookType> = (
     }
 ) => {
     const navigate = useNavigate()
-
+    const substringName = (name: String): String => {
+        let maxLength = 38;
+        return name.length > maxLength
+            ? name.substring(0, maxLength - 3) + "..."
+            : name
+    }
     return (
-        <Badge.Ribbon text={isPopular ? "Популярно" : null} color={"#F35B04"}>
+        <Ribbon isPopular={isPopular}>
             <Card
                 onClick={() => navigate(`/recipe/${id}`)}
                 hoverable
@@ -100,8 +107,7 @@ export const CardRecook: React.FC<CardRecookType> = (
                     </Space>
                 </Flex>
                 <Flex gap={5} vertical align="flex-start" style={PADDING_10}>
-                    <Text> {name} </Text>
-
+                    <Text style={LIGHT_FONT_SIZE_2}> {substringName(name)} </Text>
                     <Flex wrap gap={5}>
                         {nowCooking ?
                             <Button size={"small"} style={nowCookingStyle} type={"primary"} icon={<PlayCircleFilled/>}>
@@ -119,6 +125,6 @@ export const CardRecook: React.FC<CardRecookType> = (
                 </Flex>
 
             </Card>
-        </Badge.Ribbon>
+        </Ribbon>
     )
 }
