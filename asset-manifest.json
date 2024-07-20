@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/recook.ru/static/css/main.632180ec.css",
-    "main.js": "/recook.ru/static/js/main.6a21b532.js",
+    "main.js": "/recook.ru/static/js/main.0be4206d.js",
     "static/media/stars_main_page.svg": "/recook.ru/static/media/stars_main_page.6b4a87791e35c1487550.svg",
     "index.html": "/recook.ru/index.html",
     "main.632180ec.css.map": "/recook.ru/static/css/main.632180ec.css.map",
-    "main.6a21b532.js.map": "/recook.ru/static/js/main.6a21b532.js.map"
+    "main.0be4206d.js.map": "/recook.ru/static/js/main.0be4206d.js.map"
   },
   "entrypoints": [
     "static/css/main.632180ec.css",
-    "static/js/main.6a21b532.js"
+    "static/js/main.0be4206d.js"
   ]
 }
