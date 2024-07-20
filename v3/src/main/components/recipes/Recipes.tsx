@@ -3,7 +3,7 @@ import {Col, Divider, Flex, Menu, Row, Typography} from "antd";
 import {MailOutlined, AppstoreOutlined, SettingOutlined, MenuUnfoldOutlined, MenuFoldOutlined} from "@ant-design/icons";
 import {BASE_BORDER_RADIUS, BASE_NOTE_STYLE, BASE_PADDING, H1_FONT_SIZE} from "../../utils/Contants";
 import {MenuItem} from "../../utils/utils";
-import {CardRecook} from "../card/CardRecook";
+import {CardRecipe} from "../card/CardRecipe/CardRecipe";
 
 const {Text} = Typography
 const items: MenuItem[] = [
@@ -97,28 +97,28 @@ export const Recipes: React.FC = () => {
                 <Flex wrap gap={"large"} style={isDisplayNone ? {} : BASE_PADDING}>
                     <Flex wrap gap={"small"} style={isDisplayNone ? {} : BASE_NOTE_STYLE}>
                         <Divider orientation={"left"}> Лучшие рецепты по рейтингу </Divider>
-                        <CardRecook photoUrl={url} cookTime={1} rating={5} name={"Всем"}/>
-                        <CardRecook photoUrl={url} cookTime={1} rating={5}
+                        <CardRecipe photoUrl={url} cookTime={1} rating={5} name={"Всем"}/>
+                        <CardRecipe photoUrl={url} cookTime={1} rating={5}
                                     name={"0123456789012345678901234567890123456789"}/>
-                        <CardRecook photoUrl={url} cookTime={1} rating={5} name={"Меня"} isPopular/>
-                        <CardRecook photoUrl={url} cookTime={1} rating={5} name={"зовут"}/>
-                        <CardRecook photoUrl={url} cookTime={1} rating={5} name={"vm4tech"}/>
-                        <CardRecook photoUrl={url} cookTime={1} rating={5} name={"это"}/>
-                        <CardRecook photoUrl={url} cookTime={1} rating={5} name={"recook!"}/>
+                        <CardRecipe photoUrl={url} cookTime={1} rating={5} name={"Меня"} isPopular/>
+                        <CardRecipe photoUrl={url} cookTime={1} rating={5} name={"зовут"}/>
+                        <CardRecipe photoUrl={url} cookTime={1} rating={5} name={"vm4tech"}/>
+                        <CardRecipe photoUrl={url} cookTime={1} rating={5} name={"это"}/>
+                        <CardRecipe photoUrl={url} cookTime={1} rating={5} name={"recook!"}/>
                     </Flex>
                     <Flex wrap gap={"small"} style={isDisplayNone ? {} : BASE_NOTE_STYLE}>
                         <Divider orientation={"left"}> Популярные рецепты </Divider>
-                        <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"Всем"} isPopular/>
-                        <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"Привет"} isPopular/>
-                        <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"это"} isPopular/>
-                        <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"recook!"} isPopular/>
+                        <CardRecipe photoUrl={url} cookTime={20} rating={4.3} name={"Всем"} isPopular/>
+                        <CardRecipe photoUrl={url} cookTime={20} rating={4.3} name={"Привет"} isPopular/>
+                        <CardRecipe photoUrl={url} cookTime={20} rating={4.3} name={"это"} isPopular/>
+                        <CardRecipe photoUrl={url} cookTime={20} rating={4.3} name={"recook!"} isPopular/>
                     </Flex>
                     <Flex wrap gap={"small"} style={isDisplayNone ? {} : BASE_NOTE_STYLE}>
                         <Divider orientation={"left"}> Сейчас готовят </Divider>
-                        <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"Всем"} nowCooking={222}/>
-                        <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"Привет"} nowCooking={44}/>
-                        <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"это"} nowCooking={1}/>
-                        <CardRecook photoUrl={url} cookTime={20} rating={4.3} name={"recook!"} nowCooking={324}/>
+                        <CardRecipe photoUrl={url} cookTime={20} rating={4.3} name={"Всем"} nowCooking={222}/>
+                        <CardRecipe photoUrl={url} cookTime={20} rating={4.3} name={"Привет"} nowCooking={44}/>
+                        <CardRecipe photoUrl={url} cookTime={20} rating={4.3} name={"это"} nowCooking={1}/>
+                        <CardRecipe photoUrl={url} cookTime={20} rating={4.3} name={"recook!"} nowCooking={324}/>
                     </Flex>
 
                 </Flex>

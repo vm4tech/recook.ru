@@ -16,7 +16,7 @@ const {Title, Text} = Typography;
 
 const headerItems: MenuProps["items"] = [
     getItem("Главная", "main"),
-    isAdmin() ? getItem("Ингредиенты", "ingredient") : null,
+    getItem("Ингредиенты", "ingredients"),
     getItem("Рецепты", "recipes/all"),
     isLoggined() ? getItem("История", "history") : null,
     isLoggined() ? getItem("Профиль", "profile") : null,

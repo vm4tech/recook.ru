@@ -3,20 +3,24 @@ import {PlayCircleFilled, ClockCircleFilled, FireFilled, FireOutlined, FireTwoTo
 import {RatingStartSvg} from "./RatingStartSvg";
 import {Badge, Button, Card, Divider, Flex, Space, Typography} from "antd";
 import {blue} from "@ant-design/colors";
-import {BASE_BORDER_RADIUS, LIGHT_FONT_SIZE_2, LIGHT_FONT_SIZE_3, PADDING_10} from "../../utils/Contants";
+import {
+    BASE_BORDER_RADIUS,
+    BASE_BUTTON_STYLE,
+    LIGHT_FONT_SIZE_2,
+    LIGHT_FONT_SIZE_3, MAX_CARD_WIDTH, MAX_IMG_HEIGHT, MIN_CARD_WIDTH, MIN_IMG_HEIGHT,
+    PADDING_10
+} from "../../../utils/Contants";
 import {useNavigate} from "react-router-dom";
-import {BASE_RECOOK_ORANGE_BC, WhiteColor} from "../../utils/colors";
-import {Ribbon} from "../common/Ribbon/Ribbon";
+import {BASE_RECOOK_ORANGE_BC, WhiteColor} from "../../../utils/colors";
+import {Ribbon} from "../../common/Ribbon/Ribbon";
 
 const {Text} = Typography
 
-const MIN_CARD_WIDTH = 140;
-const MAX_CARD_WIDTH = 212;
 const imgStyle: React.CSSProperties = {
     display: 'block',
     height: "30vw",
-    maxHeight: MAX_CARD_WIDTH,
-    minHeight: MIN_CARD_WIDTH + 30,
+    maxHeight: MAX_IMG_HEIGHT,
+    minHeight: MIN_IMG_HEIGHT,
     objectFit: "cover",
 };
 const imgDivBlockStyle: React.CSSProperties = {
@@ -55,10 +59,9 @@ const genresButtonStyle = (color = `#${Math.random().toString(16).substr(-6)}`):
     }
 
 }
-const nowCookingStyle: React.CSSProperties = {...BASE_RECOOK_ORANGE_BC, ...BASE_BORDER_RADIUS}
 
 /** TODO: Сделать предпросмотр */
-export const CardRecook: React.FC<CardRecookType> = (
+export const CardRecipe: React.FC<CardRecookType> = (
     {
         id = "76e46497-3182-4d37-a296-8c67be3411f3",
         photoUrl,
@@ -110,7 +113,8 @@ export const CardRecook: React.FC<CardRecookType> = (
                     <Text style={LIGHT_FONT_SIZE_2}> {substringName(name)} </Text>
                     <Flex wrap gap={5}>
                         {nowCooking ?
-                            <Button size={"small"} style={nowCookingStyle} type={"primary"} icon={<PlayCircleFilled/>}>
+                            <Button size={"small"} style={BASE_BUTTON_STYLE} type={"primary"}
+                                    icon={<PlayCircleFilled/>}>
                                 {nowCooking}
                             </Button> : null
                         }

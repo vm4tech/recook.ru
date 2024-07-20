@@ -70,7 +70,6 @@ export const Recipe: React.FC = () => {
                     >
                         <Flex wrap gap={"middle"}>
                             <Sticky mainText={"999"} secondText={"Шагов"}/>
-                            <Sticky mainText={"999"} secondText={"Шагов"}/>
                             <Sticky mainText={"09.07.2024"} secondText={"Дата"}/>
                             <Sticky mainText={"1/3"} secondText={"Острота"}/>
                             <Sticky mainText={"Бомжатская"} secondText={"Кухня"}/>

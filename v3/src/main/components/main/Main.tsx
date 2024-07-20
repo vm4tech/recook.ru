@@ -1,7 +1,7 @@
 import React from "react";
 
 import {Col, Flex, Row, Typography,} from "antd";
-import {CardRecook} from "../card/CardRecook";
+import {CardRecipe} from "../card/CardRecipe/CardRecipe";
 import {H1_FONT_SIZE} from "../../utils/Contants";
 
 const {Text, Title} = Typography;
@@ -44,7 +44,7 @@ export const Main: React.FC = () => {
             >
                 <Row align={"middle"} justify={"space-around"} gutter={[16, 16]}>
                     <Col>
-                        <CardRecook
+                        <CardRecipe
                             isPopular
                             photoUrl="https://balthazar.club/uploads/posts/2023-09/1695454619_balthazar-club-p-belie-tsveti-s-bolshimi-butonami-pinterest-62.jpg"
                             cookTime={33}
@@ -54,7 +54,7 @@ export const Main: React.FC = () => {
                         />
                     </Col>
                     <Col>
-                        <CardRecook
+                        <CardRecipe
                             photoUrl="https://i.artfile.ru/2880x1800_1464137_[www.ArtFile.ru].jpg"
                             cookTime={60}
                             name="Люля из человечены в пикантом соусе тартар"
@@ -63,7 +63,7 @@ export const Main: React.FC = () => {
                         />
                     </Col>
                     <Col>
-                        <CardRecook
+                        <CardRecipe
                             isPopular
                             photoUrl="https://static.tildacdn.com/tild6538-6434-4361-b062-396465373661/_bbq.jpg"
                             cookTime={25}

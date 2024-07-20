@@ -1,4 +1,4 @@
-import {WhiteColor} from "./colors";
+import {BASE_RECOOK_ORANGE_BC, WhiteColor} from "./colors";
 
 export const BASE_BORDER_RADIUS = {borderRadius: 20};
 export const BASE_PADDING = {padding: 20}
@@ -13,3 +13,11 @@ export const LIGHT_FONT_SIZE_3 = {fontSize: "11px"}
 // export const SMALL
 export const BASE_NOTE_STYLE = {...WhiteColor, ...BASE_PADDING, ...BASE_BORDER_RADIUS}
 export const BASE_H2_NOTE_STYLE = {...WhiteColor, ...BASE_PADDING, ...BASE_BORDER_RADIUS, ...H2_FONT_SIZE}
+
+export const BASE_BUTTON_STYLE = {...BASE_RECOOK_ORANGE_BC, ...BASE_BORDER_RADIUS}
+
+export const MIN_CARD_WIDTH = 140;
+export const MAX_CARD_WIDTH = 212;
+export const MIN_IMG_HEIGHT = MIN_CARD_WIDTH + 30;
+export const MAX_IMG_HEIGHT = MAX_CARD_WIDTH;
+
