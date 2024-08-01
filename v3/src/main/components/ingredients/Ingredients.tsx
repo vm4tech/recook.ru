@@ -16,7 +16,7 @@ import {useNavigate} from "react-router-dom";
 
 const {Text} = Typography
 const mashroomUrl = "https://main-cdn.sbermegamarket.ru/big1/hlr-system/-14/329/517/237/118/32/100028814519b0.jpg";
-const cheeseUrl = "https://catherineasquithgallery.com/uploads/posts/2021-03/1614578288_2-p-sir-na-belom-fone-2.jpg";
+const cheeseUrl = "https://storage.yandexcloud.net/recook/cheese-cheese.jpg";
 export const Ingredients: React.FC = () => {
     const [displayWidth, setDisplayWidth] = useState(window.innerWidth)
     const isDisplayNone = displayWidth < 1200
